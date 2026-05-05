@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 80" width="310" height="80" role="img" aria-label="Accurate Labs">
+  <!-- Circular emblem (translucent on dark backgrounds) -->
+  <circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.12)"/>
+  <circle cx="40" cy="40" r="35" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+
+  <!-- Precision tick marks at cardinal points -->
+  <line x1="40" y1="1"  x2="40" y2="4"  stroke="#e8a000" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="40" y1="76" x2="40" y2="79" stroke="#e8a000" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="1"  y1="40" x2="4"  y2="40" stroke="#e8a000" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="76" y1="40" x2="79" y2="40" stroke="#e8a000" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Flask: stopper -->
+  <rect x="34" y="12" width="12" height="4" rx="2" fill="#e8a000"/>
+  <!-- Flask: neck -->
+  <rect x="36" y="16" width="8" height="15" rx="1" fill="white"/>
+  <!-- Flask: body (Erlenmeyer) -->
+  <polygon points="36,31 44,31 55,60 25,60" fill="white"/>
+  <!-- Flask: liquid fill -->
+  <polygon points="30,47 50,47 55,60 25,60" fill="#e8a000"/>
+  <!-- Bubbles -->
+  <circle cx="37" cy="53" r="2"   fill="rgba(255,255,255,0.55)"/>
+  <circle cx="44" cy="55" r="1.5" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- Separator -->
+  <line x1="88" y1="16" x2="88" y2="64" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+
+  <!-- Wordmark -->
+  <text x="100" y="36"
+        font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-weight="700" font-size="27" letter-spacing="2"
+        fill="white">ACCURATE</text>
+  <text x="102" y="64"
+        font-family="'Segoe UI', Arial, Helvetica, sans-serif"
+        font-weight="600" font-size="22" letter-spacing="10"
+        fill="#e8a000">LABS</text>
+</svg>

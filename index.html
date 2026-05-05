@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Accurate Labs — Precision Laboratory Solutions & Scientific Instruments" />
+  <title>Accurate Labs</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ── Top Bar ── -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span><i class="fa fa-envelope"></i> info@accuratelabs.com</span>
+      <span><i class="fa fa-phone"></i> +92 300 0000000</span>
+      <div class="topbar__social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Header / Nav ── -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#" class="nav__logo">
+        <img src="images/logo.svg" alt="Accurate Labs" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#home"     class="nav-link active">Home</a></li>
+        <li><a href="#about"    class="nav-link">About Us</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#clients"  class="nav-link">Clients</a></li>
+        <li><a href="#contact"  class="nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ── Hero Carousel ── -->
+  <section class="hero" id="home">
+    <div class="carousel">
+      <div class="carousel__track" id="carouselTrack">
+        <div class="carousel__slide" style="background-image: url('Main_Pictures/Pic%201.webp')">
+          <div class="slide__overlay">
+            <div class="slide__content">
+              <h1>Precision Laboratory Solutions</h1>
+              <p>Supplying world-class scientific instruments & lab equipment across Pakistan</p>
+              <a href="#services" class="btn btn--primary">Our Services</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__slide" style="background-image: url('Main_Pictures/Chemical-Reference-Material-1.jpg')">
+          <div class="slide__overlay">
+            <div class="slide__content">
+              <h1>Trusted Scientific Partner</h1>
+              <p>Decades of experience delivering accuracy and reliability to leading institutions</p>
+              <a href="#about" class="btn btn--primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__slide" style="background-image: url('Main_Pictures/science-laboratory-background-wallpaper-banner-260nw-2326836025.png')">
+          <div class="slide__overlay">
+            <div class="slide__content">
+              <h1>Quality You Can Count On</h1>
+              <p>Certified products, expert support, and on-time delivery guaranteed</p>
+              <a href="#contact" class="btn btn--primary">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel__btn carousel__btn--prev" id="prevBtn" aria-label="Previous slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="carousel__btn carousel__btn--next" id="nextBtn" aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <div class="carousel__dots" id="carouselDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats Bar ── -->
+  <div class="stats-bar">
+    <div class="container stats-bar__inner">
+      <div class="stat">
+        <strong>15+</strong>
+        <span>Years of Expertise</span>
+      </div>
+      <div class="stat">
+        <strong>500+</strong>
+        <span>Products</span>
+      </div>
+      <div class="stat">
+        <strong>200+</strong>
+        <span>Clients Served</span>
+      </div>
+      <div class="stat">
+        <strong>50+</strong>
+        <span>Brand Partners</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── About ── -->
+  <section class="section" id="about">
+    <div class="container about__inner">
+      <div class="about__text">
+        <span class="section__tag">Who We Are</span>
+        <h2 class="section__title--left">About Accurate Labs</h2>
+        <p>Accurate Labs is a premier supplier of laboratory instruments, glassware, chemicals, and scientific equipment. We serve research institutions, universities, hospitals, and industrial laboratories with an unwavering commitment to precision and quality.</p>
+        <p>Our expert team ensures that every product meets the highest international standards — from procurement through delivery and after-sales support.</p>
+        <ul class="about__list">
+          <li><i class="fas fa-check-circle"></i> ISO-certified product sourcing</li>
+          <li><i class="fas fa-check-circle"></i> Nationwide delivery network</li>
+          <li><i class="fas fa-check-circle"></i> Expert technical support</li>
+          <li><i class="fas fa-check-circle"></i> Competitive pricing & fast turnaround</li>
+        </ul>
+        <a href="#contact" class="btn btn--primary">Contact Us</a>
+      </div>
+      <div class="about__image">
+        <div class="about__img-placeholder">
+          <img src="images/logo-white.svg" alt="Accurate Labs" class="about__logo-img">
+          <p class="about__logo-tagline">Precision. Quality. Trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services ── -->
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <span class="section__tag section__tag--center">What We Offer</span>
+      <h2 class="section__title">Our Services</h2>
+      <p class="section__subtitle">End-to-end laboratory solutions tailored to your needs</p>
+      <div class="services__grid">
+        <div class="service__card">
+          <div class="service__icon"><i class="fas fa-microscope"></i></div>
+          <h3>Scientific Instruments</h3>
+          <p>High-precision instruments for research, analysis, and quality control from leading global brands.</p>
+        </div>
+        <div class="service__card">
+          <div class="service__icon"><i class="fas fa-vial"></i></div>
+          <h3>Laboratory Glassware</h3>
+          <p>Complete range of borosilicate and specialized glassware for every laboratory application.</p>
+        </div>
+        <div class="service__card">
+          <div class="service__icon"><i class="fas fa-atom"></i></div>
+          <h3>Chemicals & Reagents</h3>
+          <p>High-purity chemicals, reagents, and solvents for laboratory and industrial use.</p>
+        </div>
+        <div class="service__card">
+          <div class="service__icon"><i class="fas fa-cogs"></i></div>
+          <h3>HPLC / GC Columns</h3>
+          <p>Chromatography columns, consumables, and accessories for analytical applications.</p>
+        </div>
+        <div class="service__card">
+          <div class="service__icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Safety Equipment</h3>
+          <p>Comprehensive lab safety gear, PPE, and environmental monitoring solutions.</p>
+        </div>
+        <div class="service__card">
+          <div class="service__icon"><i class="fas fa-tools"></i></div>
+          <h3>Calibration & Support</h3>
+          <p>On-site calibration, maintenance, and technical support for all supplied instruments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Products ── -->
+  <section class="section" id="products">
+    <div class="container">
+      <span class="section__tag section__tag--center">Product Range</span>
+      <h2 class="section__title">Product Categories</h2>
+      <p class="section__subtitle">Serving every corner of your laboratory</p>
+      <div class="products__grid">
+        <div class="product__cat">
+          <i class="fas fa-flask"></i>
+          <span>Lab Glassware</span>
+        </div>
+        <div class="product__cat">
+          <i class="fas fa-thermometer-half"></i>
+          <span>Analytical Instruments</span>
+        </div>
+        <div class="product__cat">
+          <i class="fas fa-pills"></i>
+          <span>Chemicals</span>
+        </div>
+        <div class="product__cat">
+          <i class="fas fa-box"></i>
+          <span>Plasticware</span>
+        </div>
+        <div class="product__cat">
+          <i class="fas fa-laptop-medical"></i>
+          <span>Testing Equipment</span>
+        </div>
+        <div class="product__cat">
+          <i class="fas fa-filter"></i>
+          <span>Filtration</span>
+        </div>
+        <div class="product__cat">
+          <i class="fas fa-weight"></i>
+          <span>Weighing Scales</span>
+        </div>
+        <div class="product__cat">
+          <i class="fas fa-wind"></i>
+          <span>Fume Hoods</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Clients ── -->
+  <section class="section section--alt" id="clients">
+    <div class="container">
+      <span class="section__tag section__tag--center">Trusted By</span>
+      <h2 class="section__title">Our Clients</h2>
+      <p class="section__subtitle">Proud to serve leading institutions across Pakistan</p>
+      <div class="clients__grid">
+        <div class="client__logo"><i class="fas fa-university"></i><span>University A</span></div>
+        <div class="client__logo"><i class="fas fa-hospital"></i><span>Hospital B</span></div>
+        <div class="client__logo"><i class="fas fa-industry"></i><span>Industry C</span></div>
+        <div class="client__logo"><i class="fas fa-graduation-cap"></i><span>Institute D</span></div>
+        <div class="client__logo"><i class="fas fa-building"></i><span>Corp E</span></div>
+        <div class="client__logo"><i class="fas fa-flask"></i><span>Research F</span></div>
+        <div class="client__logo"><i class="fas fa-microscope"></i><span>Lab G</span></div>
+        <div class="client__logo"><i class="fas fa-atom"></i><span>Science H</span></div>
+      </div>
+      <p class="clients__note">Replace placeholder icons with your actual client logos in the <code>images/clients/</code> folder.</p>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section class="section" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__info">
+        <span class="section__tag">Reach Us</span>
+        <h2 class="section__title--left">Get In Touch</h2>
+        <p>Have a question or need a quote? Our team is ready to assist you.</p>
+        <ul class="contact__details">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <div><strong>Address</strong><br/>123 Lab Street, Karachi, Pakistan</div>
+          </li>
+          <li>
+            <i class="fas fa-phone-alt"></i>
+            <div><strong>Phone</strong><br/>+92 300 0000000</div>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <div><strong>Email</strong><br/>info@accuratelabs.com</div>
+          </li>
+          <li>
+            <i class="fas fa-clock"></i>
+            <div><strong>Business Hours</strong><br/>Mon – Sat: 9:00 AM – 6:00 PM</div>
+          </li>
+        </ul>
+      </div>
+      <form class="contact__form" id="contactForm">
+        <h3>Send Us a Message</h3>
+        <input type="text"  name="name"    placeholder="Full Name"     required />
+        <input type="email" name="email"   placeholder="Email Address" required />
+        <input type="text"  name="phone"   placeholder="Phone Number"  />
+        <input type="text"  name="subject" placeholder="Subject"       required />
+        <textarea name="message" rows="5"  placeholder="Your Message"  required></textarea>
+        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        <div class="form__msg" id="formMsg"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <img src="images/logo-white.svg" alt="Accurate Labs" class="footer__logo-img">
+        </div>
+        <p>Precision laboratory solutions for research, education, and industry across Pakistan.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Product Categories</h4>
+        <ul>
+          <li><a href="#products">Lab Glassware</a></li>
+          <li><a href="#products">Scientific Instruments</a></li>
+          <li><a href="#products">Chemicals & Reagents</a></li>
+          <li><a href="#products">HPLC / GC Columns</a></li>
+          <li><a href="#products">Safety Equipment</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul class="footer__contact">
+          <li><i class="fas fa-map-marker-alt"></i> 123 Lab Street, Karachi</li>
+          <li><i class="fas fa-phone"></i> +92 300 0000000</li>
+          <li><i class="fas fa-envelope"></i> info@accuratelabs.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Accurate Labs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
