@@ -282,6 +282,7 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
+  .products__grid { grid-template-columns: repeat(2, 1fr); }
   .topbar__social { display: none; }
 
   .nav__toggle { display: block; }
@@ -304,6 +305,7 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 480px) {
+  .products__grid { grid-template-columns: 1fr; }
   .hero { height: 380px; }
   .stats-bar__inner { gap: 1.5rem; }
   .stat strong { font-size: 1.6rem; }
