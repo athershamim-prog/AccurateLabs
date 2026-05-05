@@ -2,23 +2,17 @@
   <!-- Circular emblem -->
   <circle cx="40" cy="40" r="35" fill="#003366"/>
 
-  <!-- Precision tick marks at cardinal points -->
+  <!-- Precision tick marks -->
   <line x1="40" y1="1"  x2="40" y2="4"  stroke="#e8a000" stroke-width="2.5" stroke-linecap="round"/>
   <line x1="40" y1="76" x2="40" y2="79" stroke="#e8a000" stroke-width="2.5" stroke-linecap="round"/>
   <line x1="1"  y1="40" x2="4"  y2="40" stroke="#e8a000" stroke-width="2.5" stroke-linecap="round"/>
   <line x1="76" y1="40" x2="79" y2="40" stroke="#e8a000" stroke-width="2.5" stroke-linecap="round"/>
 
-  <!-- Flask: stopper -->
-  <rect x="34" y="12" width="12" height="4" rx="2" fill="#e8a000"/>
-  <!-- Flask: neck -->
-  <rect x="36" y="16" width="8" height="15" rx="1" fill="white"/>
-  <!-- Flask: body (Erlenmeyer) -->
-  <polygon points="36,31 44,31 55,60 25,60" fill="white"/>
-  <!-- Flask: liquid fill -->
-  <polygon points="30,47 50,47 55,60 25,60" fill="#e8a000"/>
-  <!-- Bubbles -->
-  <circle cx="37" cy="53" r="2"   fill="rgba(255,255,255,0.55)"/>
-  <circle cx="44" cy="55" r="1.5" fill="rgba(255,255,255,0.55)"/>
+  <!-- Plus sign -->
+  <path d="M37,18 L43,18 L43,37 L62,37 L62,43 L43,43 L43,62 L37,62 L37,43 L18,43 L18,37 L37,37 Z" fill="white"/>
+
+  <!-- Gold centre dot -->
+  <circle cx="40" cy="40" r="4" fill="#e8a000"/>
 
   <!-- Separator -->
   <line x1="88" y1="16" x2="88" y2="64" stroke="#dde4ed" stroke-width="1"/>
