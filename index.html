@@ -182,38 +182,38 @@
       <h2 class="section__title">Product Categories</h2>
       <p class="section__subtitle">Serving every corner of your laboratory</p>
       <div class="products__grid">
-        <div class="product__cat">
+        <a class="product__cat" href="products.html?cat=Lab+Glassware">
           <i class="fas fa-flask"></i>
           <span>Lab Glassware</span>
-        </div>
-        <div class="product__cat">
+        </a>
+        <a class="product__cat" href="products.html?cat=Analytical+Instruments">
           <i class="fas fa-thermometer-half"></i>
           <span>Analytical Instruments</span>
-        </div>
-        <div class="product__cat">
+        </a>
+        <a class="product__cat" href="products.html?cat=Chemicals">
           <i class="fas fa-pills"></i>
           <span>Chemicals</span>
-        </div>
-        <div class="product__cat">
+        </a>
+        <a class="product__cat" href="products.html?cat=Plasticware">
           <i class="fas fa-box"></i>
           <span>Plasticware</span>
-        </div>
-        <div class="product__cat">
+        </a>
+        <a class="product__cat" href="products.html?cat=Testing+Equipment">
           <i class="fas fa-laptop-medical"></i>
           <span>Testing Equipment</span>
-        </div>
-        <div class="product__cat">
+        </a>
+        <a class="product__cat" href="products.html?cat=Filtration">
           <i class="fas fa-filter"></i>
           <span>Filtration</span>
-        </div>
-        <div class="product__cat">
+        </a>
+        <a class="product__cat" href="products.html?cat=Weighing+Scales">
           <i class="fas fa-weight"></i>
           <span>Weighing Scales</span>
-        </div>
-        <div class="product__cat">
+        </a>
+        <a class="product__cat" href="products.html?cat=Fume+Hoods">
           <i class="fas fa-wind"></i>
           <span>Fume Hoods</span>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -329,5 +329,13 @@
   </button>
 
   <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('a.product__cat').forEach(link => {
+      link.addEventListener('click', () => {
+        const cat = new URL(link.href).searchParams.get('cat');
+        if (cat) localStorage.setItem('initCat', cat);
+      });
+    });
+  </script>
 </body>
 </html>
