@@ -255,69 +255,29 @@
       navToggle.innerHTML = open ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
-    /* ── Product Data ── */
+    /* ── Product Data ── (images auto-loaded from "Product Images/<name>.jpg/png/webp") */
     const productData = {
-      'Lab Glassware': [
-        { name: 'Beakers',             img: 'images/products/glassware/beakers.jpg' },
-        { name: 'Erlenmeyer Flasks',   img: 'images/products/glassware/flasks.jpg' },
-        { name: 'Burettes',            img: 'images/products/glassware/burettes.jpg' },
-        { name: 'Pipettes',            img: 'images/products/glassware/pipettes.jpg' },
-        { name: 'Test Tubes',          img: 'images/products/glassware/test-tubes.jpg' },
-        { name: 'Petri Dishes',        img: 'images/products/glassware/petri-dishes.jpg' },
-        { name: 'Measuring Cylinders', img: 'images/products/glassware/cylinders.jpg' },
-      ],
-      'Analytical Instruments': [
-        { name: 'Spectrophotometer',   img: 'images/products/analytical/spectrophotometer.jpg' },
-        { name: 'pH Meter',            img: 'images/products/analytical/ph-meter.jpg' },
-        { name: 'Centrifuge',          img: 'images/products/analytical/centrifuge.jpg' },
-        { name: 'PCR Machine',         img: 'images/products/analytical/pcr.jpg' },
-        { name: 'Water Bath',          img: 'images/products/analytical/water-bath.jpg' },
-        { name: 'Hot Plate Stirrer',   img: 'images/products/analytical/hot-plate.jpg' },
-      ],
-      'Chemicals': [
-        { name: 'Solvents',            img: 'images/products/chemicals/solvents.jpg' },
-        { name: 'Acids',               img: 'images/products/chemicals/acids.jpg' },
-        { name: 'Buffer Solutions',    img: 'images/products/chemicals/buffers.jpg' },
-        { name: 'Indicators',          img: 'images/products/chemicals/indicators.jpg' },
-        { name: 'Stains & Dyes',       img: 'images/products/chemicals/stains.jpg' },
-        { name: 'Culture Media',       img: 'images/products/chemicals/media.jpg' },
-      ],
-      'Plasticware': [
-        { name: 'Plastic Beakers',     img: 'images/products/plasticware/beakers.jpg' },
-        { name: 'Sample Bottles',      img: 'images/products/plasticware/bottles.jpg' },
-        { name: 'Centrifuge Tubes',    img: 'images/products/plasticware/centrifuge-tubes.jpg' },
-        { name: 'Microtubes',          img: 'images/products/plasticware/microtubes.jpg' },
-        { name: 'Pipette Tips',        img: 'images/products/plasticware/tips.jpg' },
-        { name: 'Wash Bottles',        img: 'images/products/plasticware/wash-bottles.jpg' },
-      ],
-      'Testing Equipment': [
-        { name: 'Autoclave',           img: 'images/products/testing/autoclave.jpg' },
-        { name: 'Incubator',           img: 'images/products/testing/incubator.jpg' },
-        { name: 'Microscope',          img: 'images/products/testing/microscope.jpg' },
-        { name: 'Conductivity Meter',  img: 'images/products/testing/conductivity.jpg' },
-        { name: 'Turbidity Meter',     img: 'images/products/testing/turbidity.jpg' },
-        { name: 'Dissolved Oxygen Meter', img: 'images/products/testing/do-meter.jpg' },
-      ],
-      'Filtration': [
-        { name: 'Filter Papers',       img: 'images/products/filtration/filter-papers.jpg' },
-        { name: 'Vacuum Filter Flasks',img: 'images/products/filtration/vacuum-flask.jpg' },
-        { name: 'Membrane Filters',    img: 'images/products/filtration/membranes.jpg' },
-        { name: 'Buchner Funnels',     img: 'images/products/filtration/buchner.jpg' },
-        { name: 'Syringe Filters',     img: 'images/products/filtration/syringe.jpg' },
-      ],
-      'Weighing Scales': [
-        { name: 'Analytical Balance',  img: 'images/products/weighing/analytical.jpg' },
-        { name: 'Precision Balance',   img: 'images/products/weighing/precision.jpg' },
-        { name: 'Top Loading Balance', img: 'images/products/weighing/top-loading.jpg' },
-        { name: 'Moisture Analyser',   img: 'images/products/weighing/moisture.jpg' },
-      ],
-      'Fume Hoods': [
-        { name: 'Ducted Fume Hood',    img: 'images/products/fume-hoods/ducted.jpg' },
-        { name: 'Ductless Fume Hood',  img: 'images/products/fume-hoods/ductless.jpg' },
-        { name: 'Biosafety Cabinet',   img: 'images/products/fume-hoods/biosafety.jpg' },
-        { name: 'Laminar Flow Cabinet',img: 'images/products/fume-hoods/laminar.jpg' },
-      ],
+      'Lab Glassware':        ['Beakers', 'Erlenmeyer Flasks', 'Burettes', 'Pipettes', 'Test Tubes', 'Petri Dishes', 'Measuring Cylinders'],
+      'Analytical Instruments':['Spectrophotometer', 'pH Meter', 'Centrifuge', 'PCR Machine', 'Water Bath', 'Hot Plate Stirrer'],
+      'Chemicals':            ['Solvents', 'Acids', 'Buffer Solutions', 'Indicators', 'Stains & Dyes', 'Culture Media'],
+      'Plasticware':          ['Plastic Beakers', 'Sample Bottles', 'Centrifuge Tubes', 'Microtubes', 'Pipette Tips', 'Wash Bottles'],
+      'Testing Equipment':    ['Autoclave', 'Incubator', 'Microscope', 'Conductivity Meter', 'Turbidity Meter', 'Dissolved Oxygen Meter'],
+      'Filtration':           ['Filter Papers', 'Vacuum Filter Flasks', 'Membrane Filters', 'Buchner Funnels', 'Syringe Filters'],
+      'Weighing Scales':      ['Analytical Balance', 'Precision Balance', 'Top Loading Balance', 'Moisture Analyser'],
+      'Fume Hoods':           ['Ducted Fume Hood', 'Ductless Fume Hood', 'Biosafety Cabinet', 'Laminar Flow Cabinet'],
     };
+
+    /* Try jpg → png → webp → jpeg; fall back to placeholder */
+    const IMG_EXTS = ['jpg', 'png', 'webp', 'jpeg'];
+    function tryLoadImage(imgEl, placeholder, name, extIdx) {
+      if (extIdx >= IMG_EXTS.length) {
+        imgEl.style.display = 'none';
+        placeholder.style.display = 'flex';
+        return;
+      }
+      imgEl.onerror = () => tryLoadImage(imgEl, placeholder, name, extIdx + 1);
+      imgEl.src = 'Product Images/' + name + '.' + IMG_EXTS[extIdx];
+    }
 
     const panelBody  = document.getElementById('panelBody');
     const panelTitle = document.getElementById('panelTitle');
@@ -360,23 +320,22 @@
         document.getElementById('enquireModal').classList.add('open');
       });
 
-      function selectProduct(li, product) {
+      function selectProduct(li, name) {
         list.querySelectorAll('li').forEach(el => el.classList.remove('active'));
         li.classList.add('active');
-        caption.textContent = product.name;
+        caption.textContent = name;
         img.style.display = 'block';
         placeholder.style.display = 'none';
-        img.onerror = () => { img.style.display = 'none'; placeholder.style.display = 'flex'; };
-        img.src = product.img;
-        img.alt = product.name;
+        img.alt = name;
+        tryLoadImage(img, placeholder, name, 0);
       }
 
-      products.forEach((p, i) => {
+      products.forEach((name, i) => {
         const li = document.createElement('li');
-        li.textContent = p.name;
-        li.addEventListener('click', () => selectProduct(li, p));
+        li.textContent = name;
+        li.addEventListener('click', () => selectProduct(li, name));
         list.appendChild(li);
-        if (i === 0) selectProduct(li, p);
+        if (i === 0) selectProduct(li, name);
       });
     }
 
