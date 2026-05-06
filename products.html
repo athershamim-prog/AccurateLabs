@@ -276,7 +276,7 @@
         return;
       }
       imgEl.onerror = () => tryLoadImage(imgEl, placeholder, name, extIdx + 1);
-      imgEl.src = 'Product Images/' + name + '.' + IMG_EXTS[extIdx];
+      imgEl.src = encodeURI('Product Images/' + name + '.' + IMG_EXTS[extIdx]);
     }
 
     const panelBody  = document.getElementById('panelBody');
