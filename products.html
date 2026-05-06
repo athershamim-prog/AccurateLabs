@@ -25,17 +25,17 @@
     .cat-sidebar ul { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex: 1; }
     .cat-sidebar ul li { border-bottom: 1px solid var(--border); }
     .cat-sidebar ul li:last-child { border-bottom: none; }
-    .cat-sidebar ul li a {
-      display: flex; align-items: center; gap: .75rem;
+    .cat-sidebar ul li button {
+      display: flex; align-items: center; gap: .75rem; width: 100%;
       padding: .85rem 1.25rem; font-size: .9rem; font-weight: 500;
-      color: var(--text); text-decoration: none;
+      color: var(--text); background: none; border: none;
+      text-align: left; cursor: pointer;
       transition: background var(--transition), color var(--transition);
-      cursor: pointer;
     }
-    .cat-sidebar ul li a i { color: var(--blue-mid); width: 1.2rem; text-align: center; flex-shrink: 0; }
-    .cat-sidebar ul li a:hover { background: var(--light-bg); color: var(--blue-dark); }
-    .cat-sidebar ul li a.active { background: var(--blue-dark); color: var(--white); font-weight: 600; }
-    .cat-sidebar ul li a.active i { color: var(--accent); }
+    .cat-sidebar ul li button i { color: var(--blue-mid); width: 1.2rem; text-align: center; flex-shrink: 0; }
+    .cat-sidebar ul li button:hover { background: var(--light-bg); color: var(--blue-dark); }
+    .cat-sidebar ul li button.active { background: var(--blue-dark); color: var(--white); font-weight: 600; }
+    .cat-sidebar ul li button.active i { color: var(--accent); }
 
     /* Product browser */
     .product-panel { background: var(--white); border-radius: 10px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; }
@@ -109,12 +109,15 @@
     .modal__msg.error   { display: block; background: #fdecea; color: #c62828; }
 
     @media (max-width: 900px) {
-      .products-layout { grid-template-columns: 1fr; }
-      .cat-sidebar { position: static; }
+      .products-page { height: auto; overflow: visible; }
+      .products-page .container { overflow: visible; }
+      .products-layout { grid-template-columns: 1fr; overflow: visible; }
+      .cat-sidebar { position: static; max-height: 260px; }
     }
     @media (max-width: 600px) {
       .product-panel__body { grid-template-columns: 1fr; }
-      .prod-list { border-right: none; border-bottom: 1px solid var(--border); max-height: 200px; overflow-y: auto; }
+      .prod-list { border-right: none; border-bottom: 1px solid var(--border); max-height: 180px; overflow-y: auto; }
+      .prod-image-panel { padding: 1.25rem; }
     }
   </style>
 </head>
@@ -162,14 +165,14 @@
         <aside class="cat-sidebar">
           <h3><i class="fas fa-th-list"></i> Categories</h3>
           <ul id="catList">
-            <li><a href="javascript:void(0)" data-cat="Lab Glassware"          data-icon="fa-flask"><i class="fas fa-flask"></i> Lab Glassware</a></li>
-            <li><a href="javascript:void(0)" data-cat="Analytical Instruments"  data-icon="fa-thermometer-half"><i class="fas fa-thermometer-half"></i> Analytical Instruments</a></li>
-            <li><a href="javascript:void(0)" data-cat="Chemicals"              data-icon="fa-pills"><i class="fas fa-pills"></i> Chemicals</a></li>
-            <li><a href="javascript:void(0)" data-cat="Plasticware"            data-icon="fa-box"><i class="fas fa-box"></i> Plasticware</a></li>
-            <li><a href="javascript:void(0)" data-cat="Testing Equipment"      data-icon="fa-laptop-medical"><i class="fas fa-laptop-medical"></i> Testing Equipment</a></li>
-            <li><a href="javascript:void(0)" data-cat="Filtration"             data-icon="fa-filter"><i class="fas fa-filter"></i> Filtration</a></li>
-            <li><a href="javascript:void(0)" data-cat="Weighing Scales"        data-icon="fa-weight"><i class="fas fa-weight"></i> Weighing Scales</a></li>
-            <li><a href="javascript:void(0)" data-cat="Fume Hoods"             data-icon="fa-wind"><i class="fas fa-wind"></i> Fume Hoods</a></li>
+            <li><button type="button" data-cat="Lab Glassware"          data-icon="fa-flask"><i class="fas fa-flask"></i> Lab Glassware</button></li>
+            <li><button type="button" data-cat="Analytical Instruments"  data-icon="fa-thermometer-half"><i class="fas fa-thermometer-half"></i> Analytical Instruments</button></li>
+            <li><button type="button" data-cat="Chemicals"              data-icon="fa-pills"><i class="fas fa-pills"></i> Chemicals</button></li>
+            <li><button type="button" data-cat="Plasticware"            data-icon="fa-box"><i class="fas fa-box"></i> Plasticware</button></li>
+            <li><button type="button" data-cat="Testing Equipment"      data-icon="fa-laptop-medical"><i class="fas fa-laptop-medical"></i> Testing Equipment</button></li>
+            <li><button type="button" data-cat="Filtration"             data-icon="fa-filter"><i class="fas fa-filter"></i> Filtration</button></li>
+            <li><button type="button" data-cat="Weighing Scales"        data-icon="fa-weight"><i class="fas fa-weight"></i> Weighing Scales</button></li>
+            <li><button type="button" data-cat="Fume Hoods"             data-icon="fa-wind"><i class="fas fa-wind"></i> Fume Hoods</button></li>
           </ul>
         </aside>
 
@@ -340,12 +343,11 @@
     }
 
     /* ── Sidebar clicks ── */
-    document.querySelectorAll('#catList a').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelectorAll('#catList a').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        loadCategory(link.dataset.cat, link.dataset.icon);
+    document.querySelectorAll('#catList button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#catList button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        loadCategory(btn.dataset.cat, btn.dataset.icon);
       });
     });
 
@@ -380,7 +382,7 @@
     });
 
     /* ── Open from URL param ── */
-    const allLinks = Array.from(document.querySelectorAll('#catList a'));
+    const allLinks = Array.from(document.querySelectorAll('#catList button'));
     const initCat  = localStorage.getItem('initCat') || new URLSearchParams(window.location.search).get('cat');
     localStorage.removeItem('initCat');
 
