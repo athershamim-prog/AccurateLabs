@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Accurate Labs</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── Products Page ─────────────────────────────────── */
+    /* topbar ~36px + navbar 68px = 104px */
+    .products-page {
+      height: calc(100vh - 104px);
+      padding: 1rem 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .products-page .container { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+    .products-layout { display: grid; grid-template-columns: 240px 1fr; gap: 1.5rem; flex: 1; overflow: hidden; }
+
+    /* Category sidebar */
+    .cat-sidebar { background: var(--white); border-radius: 10px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; }
+    .cat-sidebar h3 { background: var(--blue-dark); color: var(--white); padding: 1rem 1.25rem; font-size: .9rem; letter-spacing: .05em; text-transform: uppercase; margin: 0; }
+    .cat-sidebar ul { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex: 1; }
+    .cat-sidebar ul li { border-bottom: 1px solid var(--border); }
+    .cat-sidebar ul li:last-child { border-bottom: none; }
+    .cat-sidebar ul li a {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .85rem 1.25rem; font-size: .9rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      transition: background var(--transition), color var(--transition);
+      cursor: pointer;
+    }
+    .cat-sidebar ul li a i { color: var(--blue-mid); width: 1.2rem; text-align: center; flex-shrink: 0; }
+    .cat-sidebar ul li a:hover { background: var(--light-bg); color: var(--blue-dark); }
+    .cat-sidebar ul li a.active { background: var(--blue-dark); color: var(--white); font-weight: 600; }
+    .cat-sidebar ul li a.active i { color: var(--accent); }
+
+    /* Product browser */
+    .product-panel { background: var(--white); border-radius: 10px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; }
+    .product-panel__header { background: var(--blue-dark); color: var(--white); padding: 1rem 1.5rem; font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
+    .product-panel__header i { color: var(--accent); }
+    .product-panel__body { display: grid; grid-template-columns: 220px 1fr; flex: 1; overflow: hidden; }
+
+    .prod-list { border-right: 1px solid var(--border); overflow-y: auto; height: 100%; }
+    .prod-list li {
+      padding: .8rem 1.25rem; font-size: .88rem; cursor: pointer;
+      border-bottom: 1px solid var(--border); color: var(--text);
+      transition: background var(--transition), color var(--transition);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .prod-list li::before { content: '›'; color: var(--accent); font-size: 1rem; flex-shrink: 0; }
+    .prod-list li:hover { background: var(--light-bg); color: var(--blue-dark); }
+    .prod-list li.active { background: var(--blue-dark); color: var(--white); font-weight: 600; }
+    .prod-list li.active::before { color: var(--accent); }
+
+    .prod-image-panel {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 2rem; background: var(--light-bg); gap: 1rem;
+    }
+    .prod-img-wrap { width: 100%; max-width: 400px; aspect-ratio: 4/3; position: relative; }
+    .prod-img-wrap img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; display: block; background: white; }
+    .prod-img-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: var(--border); border-radius: 8px; color: var(--muted); gap: .5rem;
+    }
+    .prod-img-placeholder i { font-size: 3rem; }
+    .prod-img-placeholder p { font-size: .85rem; }
+    .prod-caption { font-size: 1rem; font-weight: 600; color: var(--blue-dark); text-align: center; }
+    .prod-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; color: var(--muted); padding: 3rem; text-align: center; }
+    .prod-empty i { font-size: 3rem; color: var(--border); }
+
+    /* Enquire button */
+    .enquire-btn { margin-top: .25rem; width: 100%; max-width: 400px; font-size: .9rem; padding: .65rem 1.5rem; }
+
+    /* Enquiry Modal */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.55);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000; opacity: 0; pointer-events: none;
+      transition: opacity .25s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: white; border-radius: 12px; padding: 2rem;
+      width: min(520px, 92vw); max-height: 90vh; overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+      transform: translateY(20px); transition: transform .25s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }
+    .modal__header h3 { font-size: 1.1rem; color: var(--blue-dark); margin: 0; display: flex; align-items: center; gap: .5rem; }
+    .modal__close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted); padding: 0; line-height: 1; }
+    .modal__close:hover { color: var(--text); }
+    .modal__product-info { background: var(--light-bg); border-radius: 8px; padding: .75rem 1rem; margin-bottom: 1.25rem; font-size: .88rem; color: var(--blue-dark); border-left: 3px solid var(--accent); }
+    .modal__product-info strong { display: block; margin-bottom: .25rem; font-size: .95rem; }
+    .modal__product-info span { color: var(--muted); font-size: .82rem; }
+    .modal form input, .modal form textarea {
+      width: 100%; padding: .72rem 1rem; margin-bottom: .8rem;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: .9rem; font-family: inherit; box-sizing: border-box;
+    }
+    .modal form textarea { resize: vertical; min-height: 90px; }
+    .modal form input:focus, .modal form textarea:focus { outline: none; border-color: var(--blue-mid); }
+    .modal__msg { margin-top: .75rem; font-size: .88rem; padding: .6rem 1rem; border-radius: 6px; display: none; }
+    .modal__msg.success { display: block; background: #e8f5e9; color: #2e7d32; }
+    .modal__msg.error   { display: block; background: #fdecea; color: #c62828; }
+
+    @media (max-width: 900px) {
+      .products-layout { grid-template-columns: 1fr; }
+      .cat-sidebar { position: static; }
+    }
+    @media (max-width: 600px) {
+      .product-panel__body { grid-template-columns: 1fr; }
+      .prod-list { border-right: none; border-bottom: 1px solid var(--border); max-height: 200px; overflow-y: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Top Bar ── -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span><i class="fa fa-envelope"></i> info@accuratelabs.com</span>
+      <span><i class="fa fa-phone"></i> +92 300 0000000</span>
+      <div class="topbar__social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Header / Nav ── -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="index.html" class="nav__logo">
+        <img src="images/logo.svg" alt="Accurate Labs" class="nav__logo-img">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html"          class="nav-link">Home</a></li>
+        <li><a href="index.html#about"    class="nav-link">About Us</a></li>
+        <li><a href="index.html#services" class="nav-link">Services</a></li>
+        <li><a href="products.html"       class="nav-link active">Products</a></li>
+        <li><a href="index.html#clients"  class="nav-link">Industries</a></li>
+        <li><a href="index.html#contact"  class="nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ── Products Layout ── -->
+  <div class="products-page">
+    <div class="container">
+      <div class="products-layout">
+
+        <!-- Sidebar -->
+        <aside class="cat-sidebar">
+          <h3><i class="fas fa-th-list"></i> Categories</h3>
+          <ul id="catList">
+            <li><a href="#" data-cat="Lab Glassware"         data-icon="fa-flask"><i class="fas fa-flask"></i> Lab Glassware</a></li>
+            <li><a href="#" data-cat="Analytical Instruments" data-icon="fa-thermometer-half"><i class="fas fa-thermometer-half"></i> Analytical Instruments</a></li>
+            <li><a href="#" data-cat="Chemicals"             data-icon="fa-pills"><i class="fas fa-pills"></i> Chemicals</a></li>
+            <li><a href="#" data-cat="Plasticware"           data-icon="fa-box"><i class="fas fa-box"></i> Plasticware</a></li>
+            <li><a href="#" data-cat="Testing Equipment"     data-icon="fa-laptop-medical"><i class="fas fa-laptop-medical"></i> Testing Equipment</a></li>
+            <li><a href="#" data-cat="Filtration"            data-icon="fa-filter"><i class="fas fa-filter"></i> Filtration</a></li>
+            <li><a href="#" data-cat="Weighing Scales"       data-icon="fa-weight"><i class="fas fa-weight"></i> Weighing Scales</a></li>
+            <li><a href="#" data-cat="Fume Hoods"            data-icon="fa-wind"><i class="fas fa-wind"></i> Fume Hoods</a></li>
+          </ul>
+        </aside>
+
+        <!-- Product Panel -->
+        <div class="product-panel" id="productPanel">
+          <div class="product-panel__header">
+            <i class="fas fa-flask" id="panelIcon"></i>
+            <span id="panelTitle">Select a category</span>
+          </div>
+          <div class="product-panel__body" id="panelBody">
+            <div class="prod-empty" style="grid-column:1/-1">
+              <i class="fas fa-hand-pointer"></i>
+              <p>Select a category from the left to browse products.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Enquiry Modal ── -->
+  <div class="modal-overlay" id="enquireModal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 id="modalHeading"><i class="fas fa-envelope"></i> Product Enquiry</h3>
+        <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal__product-info" id="modalProductInfo">
+        <strong id="modalProductName"></strong>
+        <span id="modalCatName"></span>
+      </div>
+      <form id="enquireForm">
+        <input type="text"  name="name"    placeholder="Full Name *"     required />
+        <input type="email" name="email"   placeholder="Email Address *" required />
+        <input type="text"  name="phone"   placeholder="Phone Number" />
+        <textarea name="message" rows="4"  placeholder="Your message or specific requirements..."></textarea>
+        <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
+        <div class="modal__msg" id="modalMsg"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <img src="images/logo-white.svg" alt="Accurate Labs" class="footer__logo-img">
+        </div>
+        <p>Precision laboratory solutions for research, education, and industry across Pakistan.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; <span id="year"></span> Accurate Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ── Mobile Nav ── */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+      navToggle.innerHTML = open ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    /* ── Product Data ── */
+    const productData = {
+      'Lab Glassware': [
+        { name: 'Beakers',             img: 'images/products/glassware/beakers.jpg' },
+        { name: 'Erlenmeyer Flasks',   img: 'images/products/glassware/flasks.jpg' },
+        { name: 'Burettes',            img: 'images/products/glassware/burettes.jpg' },
+        { name: 'Pipettes',            img: 'images/products/glassware/pipettes.jpg' },
+        { name: 'Test Tubes',          img: 'images/products/glassware/test-tubes.jpg' },
+        { name: 'Petri Dishes',        img: 'images/products/glassware/petri-dishes.jpg' },
+        { name: 'Measuring Cylinders', img: 'images/products/glassware/cylinders.jpg' },
+      ],
+      'Analytical Instruments': [
+        { name: 'Spectrophotometer',   img: 'images/products/analytical/spectrophotometer.jpg' },
+        { name: 'pH Meter',            img: 'images/products/analytical/ph-meter.jpg' },
+        { name: 'Centrifuge',          img: 'images/products/analytical/centrifuge.jpg' },
+        { name: 'PCR Machine',         img: 'images/products/analytical/pcr.jpg' },
+        { name: 'Water Bath',          img: 'images/products/analytical/water-bath.jpg' },
+        { name: 'Hot Plate Stirrer',   img: 'images/products/analytical/hot-plate.jpg' },
+      ],
+      'Chemicals': [
+        { name: 'Solvents',            img: 'images/products/chemicals/solvents.jpg' },
+        { name: 'Acids',               img: 'images/products/chemicals/acids.jpg' },
+        { name: 'Buffer Solutions',    img: 'images/products/chemicals/buffers.jpg' },
+        { name: 'Indicators',          img: 'images/products/chemicals/indicators.jpg' },
+        { name: 'Stains & Dyes',       img: 'images/products/chemicals/stains.jpg' },
+        { name: 'Culture Media',       img: 'images/products/chemicals/media.jpg' },
+      ],
+      'Plasticware': [
+        { name: 'Plastic Beakers',     img: 'images/products/plasticware/beakers.jpg' },
+        { name: 'Sample Bottles',      img: 'images/products/plasticware/bottles.jpg' },
+        { name: 'Centrifuge Tubes',    img: 'images/products/plasticware/centrifuge-tubes.jpg' },
+        { name: 'Microtubes',          img: 'images/products/plasticware/microtubes.jpg' },
+        { name: 'Pipette Tips',        img: 'images/products/plasticware/tips.jpg' },
+        { name: 'Wash Bottles',        img: 'images/products/plasticware/wash-bottles.jpg' },
+      ],
+      'Testing Equipment': [
+        { name: 'Autoclave',           img: 'images/products/testing/autoclave.jpg' },
+        { name: 'Incubator',           img: 'images/products/testing/incubator.jpg' },
+        { name: 'Microscope',          img: 'images/products/testing/microscope.jpg' },
+        { name: 'Conductivity Meter',  img: 'images/products/testing/conductivity.jpg' },
+        { name: 'Turbidity Meter',     img: 'images/products/testing/turbidity.jpg' },
+        { name: 'Dissolved Oxygen Meter', img: 'images/products/testing/do-meter.jpg' },
+      ],
+      'Filtration': [
+        { name: 'Filter Papers',       img: 'images/products/filtration/filter-papers.jpg' },
+        { name: 'Vacuum Filter Flasks',img: 'images/products/filtration/vacuum-flask.jpg' },
+        { name: 'Membrane Filters',    img: 'images/products/filtration/membranes.jpg' },
+        { name: 'Buchner Funnels',     img: 'images/products/filtration/buchner.jpg' },
+        { name: 'Syringe Filters',     img: 'images/products/filtration/syringe.jpg' },
+      ],
+      'Weighing Scales': [
+        { name: 'Analytical Balance',  img: 'images/products/weighing/analytical.jpg' },
+        { name: 'Precision Balance',   img: 'images/products/weighing/precision.jpg' },
+        { name: 'Top Loading Balance', img: 'images/products/weighing/top-loading.jpg' },
+        { name: 'Moisture Analyser',   img: 'images/products/weighing/moisture.jpg' },
+      ],
+      'Fume Hoods': [
+        { name: 'Ducted Fume Hood',    img: 'images/products/fume-hoods/ducted.jpg' },
+        { name: 'Ductless Fume Hood',  img: 'images/products/fume-hoods/ductless.jpg' },
+        { name: 'Biosafety Cabinet',   img: 'images/products/fume-hoods/biosafety.jpg' },
+        { name: 'Laminar Flow Cabinet',img: 'images/products/fume-hoods/laminar.jpg' },
+      ],
+    };
+
+    const panelBody  = document.getElementById('panelBody');
+    const panelTitle = document.getElementById('panelTitle');
+    const panelIcon  = document.getElementById('panelIcon');
+
+    function loadCategory(cat, iconClass) {
+      const products = productData[cat] || [];
+      panelTitle.textContent = cat;
+      panelIcon.className = 'fas ' + (iconClass || 'fa-flask');
+
+      const list = document.createElement('ul');
+      list.className = 'prod-list';
+
+      const imagePanel = document.createElement('div');
+      imagePanel.className = 'prod-image-panel';
+      imagePanel.innerHTML = `
+        <div class="prod-img-wrap">
+          <img id="prodImg" src="" alt="">
+          <div class="prod-img-placeholder" id="prodPlaceholder">
+            <i class="fas fa-image"></i><p>Image coming soon</p>
+          </div>
+        </div>
+        <p class="prod-caption" id="prodCaption"></p>
+        <button class="btn btn--primary enquire-btn" id="enquireBtn" type="button">
+          <i class="fas fa-envelope"></i> Enquire Now
+        </button>`;
+
+      panelBody.innerHTML = '';
+      panelBody.appendChild(list);
+      panelBody.appendChild(imagePanel);
+
+      const img         = panelBody.querySelector('#prodImg');
+      const placeholder = panelBody.querySelector('#prodPlaceholder');
+      const caption     = panelBody.querySelector('#prodCaption');
+      const enquireBtn  = panelBody.querySelector('#enquireBtn');
+
+      enquireBtn.addEventListener('click', () => {
+        document.getElementById('modalProductName').textContent = caption.textContent;
+        document.getElementById('modalCatName').textContent = 'Category: ' + cat;
+        document.getElementById('enquireModal').classList.add('open');
+      });
+
+      function selectProduct(li, product) {
+        list.querySelectorAll('li').forEach(el => el.classList.remove('active'));
+        li.classList.add('active');
+        caption.textContent = product.name;
+        img.style.display = 'block';
+        placeholder.style.display = 'none';
+        img.onerror = () => { img.style.display = 'none'; placeholder.style.display = 'flex'; };
+        img.src = product.img;
+        img.alt = product.name;
+      }
+
+      products.forEach((p, i) => {
+        const li = document.createElement('li');
+        li.textContent = p.name;
+        li.addEventListener('click', () => selectProduct(li, p));
+        list.appendChild(li);
+        if (i === 0) selectProduct(li, p);
+      });
+    }
+
+    /* ── Sidebar clicks ── */
+    document.querySelectorAll('#catList a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('#catList a').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        loadCategory(link.dataset.cat, link.dataset.icon);
+      });
+    });
+
+    /* ── Enquiry Modal ── */
+    const enquireModal = document.getElementById('enquireModal');
+    const modalClose   = document.getElementById('modalClose');
+    const enquireForm  = document.getElementById('enquireForm');
+    const modalMsg     = document.getElementById('modalMsg');
+
+    function closeModal() {
+      enquireModal.classList.remove('open');
+      modalMsg.className = 'modal__msg';
+      modalMsg.textContent = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    enquireModal.addEventListener('click', e => { if (e.target === enquireModal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    enquireForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(enquireForm));
+      if (!data.name || !data.email) {
+        modalMsg.textContent = 'Please provide your name and email.';
+        modalMsg.className = 'modal__msg error';
+        return;
+      }
+      modalMsg.textContent = 'Thank you! Your enquiry has been received. We will contact you shortly.';
+      modalMsg.className = 'modal__msg success';
+      enquireForm.reset();
+      setTimeout(closeModal, 2800);
+    });
+
+    /* ── Open from URL param ── */
+    const allLinks = Array.from(document.querySelectorAll('#catList a'));
+    const initCat  = localStorage.getItem('initCat') || new URLSearchParams(window.location.search).get('cat');
+    localStorage.removeItem('initCat');
+
+    const firstLink = initCat
+      ? allLinks.find(a => a.dataset.cat === initCat)
+      : allLinks[0];
+
+    if (firstLink) {
+      firstLink.classList.add('active');
+      loadCategory(firstLink.dataset.cat, firstLink.dataset.icon);
+    }
+  </script>
+</body>
+</html>
