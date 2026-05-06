@@ -78,18 +78,15 @@
     /* Enquiry Modal */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,.55);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 1000; opacity: 0; pointer-events: none;
-      transition: opacity .25s;
+      display: none; align-items: center; justify-content: center;
+      z-index: 1000;
     }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-overlay.open { display: flex; }
     .modal {
       background: white; border-radius: 12px; padding: 2rem;
       width: min(520px, 92vw); max-height: 90vh; overflow-y: auto;
       box-shadow: 0 20px 60px rgba(0,0,0,.3);
-      transform: translateY(20px); transition: transform .25s;
     }
-    .modal-overlay.open .modal { transform: translateY(0); }
     .modal__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }
     .modal__header h3 { font-size: 1.1rem; color: var(--blue-dark); margin: 0; display: flex; align-items: center; gap: .5rem; }
     .modal__close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted); padding: 0; line-height: 1; }
