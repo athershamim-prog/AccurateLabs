@@ -7,6 +7,120 @@
   <title>Accurate Labs</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── Embedded Product Browser (home page preview) ── */
+    .hp-prod-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      height: 500px;
+      overflow: hidden;
+    }
+    .hp-cat-sidebar {
+      background: var(--white); border-radius: 10px;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+    .hp-cat-sidebar h3 {
+      background: var(--blue-dark); color: var(--white);
+      padding: 1rem 1.25rem; font-size: .9rem;
+      letter-spacing: .05em; text-transform: uppercase; margin: 0;
+    }
+    .hp-cat-sidebar ul { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex: 1; }
+    .hp-cat-sidebar ul li { border-bottom: 1px solid var(--border); }
+    .hp-cat-sidebar ul li:last-child { border-bottom: none; }
+    .hp-cat-sidebar ul li button {
+      display: flex; align-items: center; gap: .75rem; width: 100%;
+      padding: .85rem 1.25rem; font-size: .9rem; font-weight: 500;
+      color: var(--text); background: none; border: none;
+      text-align: left; cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+    }
+    .hp-cat-sidebar ul li button i { color: var(--blue-mid); width: 1.2rem; text-align: center; flex-shrink: 0; }
+    .hp-cat-sidebar ul li button:hover { background: var(--light-bg); color: var(--blue-dark); }
+    .hp-cat-sidebar ul li button.active { background: var(--blue-dark); color: var(--white); font-weight: 600; }
+    .hp-cat-sidebar ul li button.active i { color: var(--accent); }
+
+    .hp-product-panel {
+      background: var(--white); border-radius: 10px;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+    .hp-product-panel__header {
+      background: var(--blue-dark); color: var(--white);
+      padding: 1rem 1.5rem; font-weight: 700; font-size: 1.05rem;
+      display: flex; align-items: center; gap: .75rem; flex-shrink: 0;
+    }
+    .hp-product-panel__header i { color: var(--accent); }
+    .hp-panel-body { display: grid; grid-template-columns: 200px 1fr; flex: 1; overflow: hidden; }
+
+    .hp-prod-list { border-right: 1px solid var(--border); overflow-y: auto; list-style: none; padding: 0; margin: 0; }
+    .hp-prod-list li {
+      padding: .8rem 1.25rem; font-size: .88rem; cursor: pointer;
+      border-bottom: 1px solid var(--border); color: var(--text);
+      transition: background var(--transition), color var(--transition);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .hp-prod-list li::before { content: '›'; color: var(--accent); font-size: 1rem; flex-shrink: 0; }
+    .hp-prod-list li:hover { background: var(--light-bg); color: var(--blue-dark); }
+    .hp-prod-list li.active { background: var(--blue-dark); color: var(--white); font-weight: 600; }
+    .hp-prod-list li.active::before { color: var(--accent); }
+
+    .hp-prod-image-panel {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 1.5rem; background: var(--light-bg); gap: 1rem; overflow: hidden;
+    }
+    .hp-prod-img-wrap { width: 100%; max-width: 320px; aspect-ratio: 4/3; position: relative; }
+    .hp-prod-img-wrap img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; display: block; background: white; }
+    .hp-prod-img-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: var(--border); border-radius: 8px; color: var(--muted); gap: .5rem;
+    }
+    .hp-prod-img-placeholder i { font-size: 3rem; }
+    .hp-prod-img-placeholder p { font-size: .85rem; }
+    .hp-prod-caption { font-size: 1rem; font-weight: 600; color: var(--blue-dark); text-align: center; }
+    .hp-enquire-btn { width: 100%; max-width: 320px; font-size: .9rem; padding: .65rem 1.5rem; }
+    .hp-view-all-wrap { text-align: center; margin-top: 1.75rem; }
+
+    @media (max-width: 900px) {
+      .hp-prod-layout { grid-template-columns: 1fr; height: auto; overflow: visible; }
+      .hp-cat-sidebar { max-height: 240px; }
+      .hp-product-panel { height: 480px; }
+      .hp-panel-body { grid-template-columns: 1fr; overflow: visible; }
+      .hp-prod-list { max-height: 160px; border-right: none; border-bottom: 1px solid var(--border); }
+      .hp-prod-image-panel { overflow: auto; }
+    }
+
+    /* ── Enquiry Modal ── */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.55);
+      display: none; align-items: center; justify-content: center; z-index: 1000;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: white; border-radius: 12px; padding: 2rem;
+      width: min(520px, 92vw); max-height: 90vh; overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    }
+    .modal__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }
+    .modal__header h3 { font-size: 1.1rem; color: var(--blue-dark); margin: 0; display: flex; align-items: center; gap: .5rem; }
+    .modal__close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted); padding: 0; line-height: 1; }
+    .modal__close:hover { color: var(--text); }
+    .modal__product-info { background: var(--light-bg); border-radius: 8px; padding: .75rem 1rem; margin-bottom: 1.25rem; font-size: .88rem; color: var(--blue-dark); border-left: 3px solid var(--accent); }
+    .modal__product-info strong { display: block; margin-bottom: .25rem; font-size: .95rem; }
+    .modal__product-info span { color: var(--muted); font-size: .82rem; }
+    .modal form input, .modal form textarea {
+      width: 100%; padding: .72rem 1rem; margin-bottom: .8rem;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: .9rem; font-family: inherit; box-sizing: border-box;
+    }
+    .modal form textarea { resize: vertical; min-height: 90px; }
+    .modal form input:focus, .modal form textarea:focus { outline: none; border-color: var(--blue-mid); }
+    .modal__msg { margin-top: .75rem; font-size: .88rem; padding: .6rem 1rem; border-radius: 6px; display: none; }
+    .modal__msg.success { display: block; background: #e8f5e9; color: #2e7d32; }
+    .modal__msg.error   { display: block; background: #fdecea; color: #c62828; }
+  </style>
 </head>
 <body>
 
@@ -175,45 +289,41 @@
     </div>
   </section>
 
-  <!-- ── Products ── -->
-  <section class="section" id="products">
+  <!-- ── Product Browser (preview) ── -->
+  <section class="section section--alt" id="product-browser">
     <div class="container">
       <span class="section__tag section__tag--center">Product Range</span>
       <h2 class="section__title">Product Categories</h2>
-      <p class="section__subtitle">Serving every corner of your laboratory</p>
-      <div class="products__grid">
-        <a class="product__cat" href="products.html?cat=Lab+Glassware">
-          <i class="fas fa-flask"></i>
-          <span>Lab Glassware</span>
-        </a>
-        <a class="product__cat" href="products.html?cat=Analytical+Instruments">
-          <i class="fas fa-thermometer-half"></i>
-          <span>Analytical Instruments</span>
-        </a>
-        <a class="product__cat" href="products.html?cat=Chemicals">
-          <i class="fas fa-pills"></i>
-          <span>Chemicals</span>
-        </a>
-        <a class="product__cat" href="products.html?cat=Plasticware">
-          <i class="fas fa-box"></i>
-          <span>Plasticware</span>
-        </a>
-        <a class="product__cat" href="products.html?cat=Testing+Equipment">
-          <i class="fas fa-laptop-medical"></i>
-          <span>Testing Equipment</span>
-        </a>
-        <a class="product__cat" href="products.html?cat=Filtration">
-          <i class="fas fa-filter"></i>
-          <span>Filtration</span>
-        </a>
-        <a class="product__cat" href="products.html?cat=Weighing+Scales">
-          <i class="fas fa-weight"></i>
-          <span>Weighing Scales</span>
-        </a>
-        <a class="product__cat" href="products.html?cat=Fume+Hoods">
-          <i class="fas fa-wind"></i>
-          <span>Fume Hoods</span>
-        </a>
+      <p class="section__subtitle">Select a category to browse our full product range</p>
+      <div class="hp-prod-layout">
+
+        <!-- Category Sidebar -->
+        <aside class="hp-cat-sidebar">
+          <h3><i class="fas fa-th-list"></i> Categories</h3>
+          <ul id="hpCatList">
+            <li><button type="button" data-cat="Lab Glassware"          data-icon="fa-flask"><i class="fas fa-flask"></i> Lab Glassware</button></li>
+            <li><button type="button" data-cat="Analytical Instruments"  data-icon="fa-thermometer-half"><i class="fas fa-thermometer-half"></i> Analytical Instruments</button></li>
+            <li><button type="button" data-cat="Chemicals"              data-icon="fa-pills"><i class="fas fa-pills"></i> Chemicals</button></li>
+            <li><button type="button" data-cat="Plasticware"            data-icon="fa-box"><i class="fas fa-box"></i> Plasticware</button></li>
+            <li><button type="button" data-cat="Testing Equipment"      data-icon="fa-laptop-medical"><i class="fas fa-laptop-medical"></i> Testing Equipment</button></li>
+            <li><button type="button" data-cat="Filtration"             data-icon="fa-filter"><i class="fas fa-filter"></i> Filtration</button></li>
+            <li><button type="button" data-cat="Weighing Scales"        data-icon="fa-weight"><i class="fas fa-weight"></i> Weighing Scales</button></li>
+            <li><button type="button" data-cat="Fume Hoods"             data-icon="fa-wind"><i class="fas fa-wind"></i> Fume Hoods</button></li>
+          </ul>
+        </aside>
+
+        <!-- Product Panel -->
+        <div class="hp-product-panel">
+          <div class="hp-product-panel__header">
+            <i class="fas fa-flask" id="hpPanelIcon"></i>
+            <span id="hpPanelTitle">Lab Glassware</span>
+          </div>
+          <div class="hp-panel-body" id="hpPanelBody"></div>
+        </div>
+
+      </div>
+      <div class="hp-view-all-wrap">
+        <a href="#contact" class="btn btn--primary">Contact Us &nbsp;<i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </section>
@@ -272,6 +382,28 @@
       </form>
     </div>
   </section>
+
+  <!-- ── Enquiry Modal ── -->
+  <div class="modal-overlay" id="hpEnquireModal" role="dialog" aria-modal="true" aria-labelledby="hpModalHeading">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 id="hpModalHeading"><i class="fas fa-envelope"></i> Product Enquiry</h3>
+        <button class="modal__close" id="hpModalClose" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal__product-info">
+        <strong id="hpModalProductName"></strong>
+        <span id="hpModalCatName"></span>
+      </div>
+      <form id="hpEnquireForm">
+        <input type="text"  name="name"    placeholder="Full Name *"     required />
+        <input type="email" name="email"   placeholder="Email Address *" required />
+        <input type="text"  name="phone"   placeholder="Phone Number" />
+        <textarea name="message" rows="4"  placeholder="Your message or specific requirements..."></textarea>
+        <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
+        <div class="modal__msg" id="hpModalMsg"></div>
+      </form>
+    </div>
+  </div>
 
   <!-- ── Footer ── -->
   <footer class="footer">
@@ -336,6 +468,132 @@
         if (cat) localStorage.setItem('initCat', cat);
       });
     });
+  </script>
+  <script>
+    /* ── Home Page Product Browser ── */
+    {
+      const hpProductData = {
+        'Lab Glassware':         ['Beakers', 'Erlenmeyer Flasks', 'Burettes', 'Pipettes', 'Test Tubes', 'Petri Dishes', 'Measuring Cylinders'],
+        'Analytical Instruments':['Spectrophotometer', 'pH Meter', 'Centrifuge', 'PCR Machine', 'Water Bath', 'Hot Plate Stirrer'],
+        'Chemicals':             ['Solvents', 'Acids', 'Buffer Solutions', 'Indicators', 'Stains & Dyes', 'Culture Media'],
+        'Plasticware':           ['Plastic Beakers', 'Sample Bottles', 'Centrifuge Tubes', 'Microtubes', 'Pipette Tips', 'Wash Bottles'],
+        'Testing Equipment':     ['Autoclave', 'Incubator', 'Microscope', 'Conductivity Meter', 'Turbidity Meter', 'Dissolved Oxygen Meter'],
+        'Filtration':            ['Filter Papers', 'Vacuum Filter Flasks', 'Membrane Filters', 'Buchner Funnels', 'Syringe Filters'],
+        'Weighing Scales':       ['Analytical Balance', 'Precision Balance', 'Top Loading Balance', 'Moisture Analyser'],
+        'Fume Hoods':            ['Ducted Fume Hood', 'Ductless Fume Hood', 'Biosafety Cabinet', 'Laminar Flow Cabinet'],
+      };
+
+      const IMG_EXTS = ['jpg', 'png', 'webp', 'jpeg'];
+      function hpTryLoad(imgEl, ph, name, idx) {
+        if (idx >= IMG_EXTS.length) { imgEl.style.display = 'none'; ph.style.display = 'flex'; return; }
+        imgEl.onerror = () => hpTryLoad(imgEl, ph, name, idx + 1);
+        imgEl.src = encodeURI('Product Images/' + name + '.' + IMG_EXTS[idx]);
+      }
+
+      const hpPanelBody  = document.getElementById('hpPanelBody');
+      const hpPanelTitle = document.getElementById('hpPanelTitle');
+      const hpPanelIcon  = document.getElementById('hpPanelIcon');
+
+      function hpLoadCategory(cat, iconClass) {
+        const products = hpProductData[cat] || [];
+        hpPanelTitle.textContent = cat;
+        hpPanelIcon.className = 'fas ' + (iconClass || 'fa-flask');
+
+        const list = document.createElement('ul');
+        list.className = 'hp-prod-list';
+
+        const imagePanel = document.createElement('div');
+        imagePanel.className = 'hp-prod-image-panel';
+        imagePanel.innerHTML = `
+          <div class="hp-prod-img-wrap">
+            <img id="hpProdImg" src="" alt="">
+            <div class="hp-prod-img-placeholder" id="hpProdPh">
+              <i class="fas fa-image"></i><p>Image coming soon</p>
+            </div>
+          </div>
+          <p class="hp-prod-caption" id="hpProdCaption"></p>
+          <button class="btn btn--primary hp-enquire-btn" id="hpEnquireBtn" type="button">
+            <i class="fas fa-envelope"></i> Enquire Now
+          </button>`;
+
+        hpPanelBody.innerHTML = '';
+        hpPanelBody.appendChild(list);
+        hpPanelBody.appendChild(imagePanel);
+
+        const img        = hpPanelBody.querySelector('#hpProdImg');
+        const ph         = hpPanelBody.querySelector('#hpProdPh');
+        const caption    = hpPanelBody.querySelector('#hpProdCaption');
+        const enquireBtn = hpPanelBody.querySelector('#hpEnquireBtn');
+
+        enquireBtn.addEventListener('click', () => {
+          document.getElementById('hpModalProductName').textContent = caption.textContent;
+          document.getElementById('hpModalCatName').textContent = 'Category: ' + cat;
+          document.getElementById('hpEnquireModal').classList.add('open');
+        });
+
+        function hpSelect(li, name) {
+          list.querySelectorAll('li').forEach(el => el.classList.remove('active'));
+          li.classList.add('active');
+          caption.textContent = name;
+          img.style.display = 'block';
+          ph.style.display = 'none';
+          img.alt = name;
+          hpTryLoad(img, ph, name, 0);
+        }
+
+        products.forEach((name, i) => {
+          const li = document.createElement('li');
+          li.textContent = name;
+          li.addEventListener('click', () => hpSelect(li, name));
+          list.appendChild(li);
+          if (i === 0) hpSelect(li, name);
+        });
+      }
+
+      document.querySelectorAll('#hpCatList button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#hpCatList button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          hpLoadCategory(btn.dataset.cat, btn.dataset.icon);
+        });
+      });
+
+      const firstBtn = document.querySelector('#hpCatList button');
+      if (firstBtn) {
+        firstBtn.classList.add('active');
+        hpLoadCategory(firstBtn.dataset.cat, firstBtn.dataset.icon);
+      }
+
+      /* Modal open/close/submit */
+      const hpModal     = document.getElementById('hpEnquireModal');
+      const hpModalClose = document.getElementById('hpModalClose');
+      const hpForm      = document.getElementById('hpEnquireForm');
+      const hpModalMsg  = document.getElementById('hpModalMsg');
+
+      function hpCloseModal() {
+        hpModal.classList.remove('open');
+        hpModalMsg.className = 'modal__msg';
+        hpModalMsg.textContent = '';
+      }
+
+      hpModalClose.addEventListener('click', hpCloseModal);
+      hpModal.addEventListener('click', e => { if (e.target === hpModal) hpCloseModal(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') hpCloseModal(); });
+
+      hpForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(hpForm));
+        if (!data.name || !data.email) {
+          hpModalMsg.textContent = 'Please provide your name and email.';
+          hpModalMsg.className = 'modal__msg error';
+          return;
+        }
+        hpModalMsg.textContent = 'Thank you! Your enquiry has been received. We will contact you shortly.';
+        hpModalMsg.className = 'modal__msg success';
+        hpForm.reset();
+        setTimeout(hpCloseModal, 2800);
+      });
+    }
   </script>
 </body>
 </html>
