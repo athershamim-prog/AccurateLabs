@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Base / foot -->
+  <ellipse cx="150" cy="244" rx="46" ry="12" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Cylinder body -->
+  <rect x="132" y="52" width="36" height="194" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5" rx="1"/>
+  <!-- Connect body to base -->
+  <path d="M132,244 L104,244 M168,244 L196,244" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Liquid (~55% fill) -->
+  <rect x="133" y="139" width="34" height="106" fill="rgba(96,165,250,0.4)"/>
+  <!-- Meniscus (concave) -->
+  <path d="M133,139 Q150,147 167,139" fill="rgba(96,165,250,0.4)" stroke="rgba(59,130,246,0.8)" stroke-width="1.5"/>
+  <!-- Pour spout at top right -->
+  <path d="M168,52 Q176,46 178,39" stroke="#1d4ed8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Graduation marks (right side) -->
+  <line x1="168" y1="72"  x2="180" y2="72"  stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="183" y="76"  font-family="Arial,sans-serif" font-size="10" fill="#1d4ed8">100</text>
+  <line x1="168" y1="101" x2="176" y2="101" stroke="#1d4ed8" stroke-width="1.5"/>
+  <line x1="168" y1="130" x2="180" y2="130" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="183" y="134" font-family="Arial,sans-serif" font-size="10" fill="#1d4ed8">50</text>
+  <line x1="168" y1="159" x2="176" y2="159" stroke="#1d4ed8" stroke-width="1.5"/>
+  <line x1="168" y1="188" x2="180" y2="188" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="183" y="192" font-family="Arial,sans-serif" font-size="10" fill="#1d4ed8">10</text>
+  <line x1="168" y1="217" x2="176" y2="217" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Minor marks (left side) -->
+  <line x1="132" y1="87"  x2="139" y2="87"  stroke="#1d4ed8" stroke-width="1"/>
+  <line x1="132" y1="116" x2="139" y2="116" stroke="#1d4ed8" stroke-width="1"/>
+  <line x1="132" y1="145" x2="139" y2="145" stroke="#1d4ed8" stroke-width="1"/>
+  <line x1="132" y1="174" x2="139" y2="174" stroke="#1d4ed8" stroke-width="1"/>
+  <line x1="132" y1="203" x2="139" y2="203" stroke="#1d4ed8" stroke-width="1"/>
+  <!-- Label -->
+  <text x="150" y="280" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Measuring Cylinder 100 mL</text>
+</svg>

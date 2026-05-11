@@ -485,7 +485,7 @@
         'Fume Hoods':            ['Ducted Fume Hood', 'Ductless Fume Hood', 'Biosafety Cabinet', 'Laminar Flow Cabinet'],
       };
 
-      const IMG_EXTS = ['jpg', 'png', 'webp', 'jpeg'];
+      const IMG_EXTS = ['jpg', 'png', 'webp', 'jpeg', 'svg'];
       function hpTryLoad(imgEl, ph, name, idx) {
         if (idx >= IMG_EXTS.length) { imgEl.style.display = 'none'; ph.style.display = 'flex'; return; }
         imgEl.onerror = () => hpTryLoad(imgEl, ph, name, idx + 1);

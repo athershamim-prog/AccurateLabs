@@ -270,7 +270,7 @@
     };
 
     /* Try jpg → png → webp → jpeg; fall back to placeholder */
-    const IMG_EXTS = ['jpg', 'png', 'webp', 'jpeg'];
+    const IMG_EXTS = ['jpg', 'png', 'webp', 'jpeg', 'svg'];
     function tryLoadImage(imgEl, placeholder, name, extIdx) {
       if (extIdx >= IMG_EXTS.length) {
         imgEl.style.display = 'none';

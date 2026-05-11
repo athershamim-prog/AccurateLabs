@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Rack top bar -->
+  <rect x="72" y="82" width="156" height="12" rx="4" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Rack bottom bar -->
+  <rect x="72" y="204" width="156" height="12" rx="4" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Rack vertical supports -->
+  <line x1="83" y1="94" x2="83" y2="204" stroke="#1d4ed8" stroke-width="1.5"/>
+  <line x1="217" y1="94" x2="217" y2="204" stroke="#1d4ed8" stroke-width="1.5"/>
+
+  <!-- Tube 1 (left, blue liquid ~50%) -->
+  <path d="M96,64 L96,190 A11,11 0 0 0 118,190 L118,64" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <path d="M97,148 L97,190 A10,10 0 0 0 117,190 L117,148 Z" fill="rgba(96,165,250,0.42)"/>
+  <line x1="97" y1="148" x2="117" y2="148" stroke="rgba(59,130,246,0.8)" stroke-width="1.5"/>
+
+  <!-- Tube 2 (centre, amber liquid ~65%) -->
+  <path d="M139,64 L139,190 A11,11 0 0 0 161,190 L161,64" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <path d="M140,127 L140,190 A10,10 0 0 0 160,190 L160,127 Z" fill="rgba(245,158,11,0.35)"/>
+  <line x1="140" y1="127" x2="160" y2="127" stroke="rgba(245,158,11,0.8)" stroke-width="1.5"/>
+
+  <!-- Tube 3 (right, green liquid ~35%) -->
+  <path d="M182,64 L182,190 A11,11 0 0 0 204,190 L204,64" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <path d="M183,162 L183,190 A10,10 0 0 0 203,190 L203,162 Z" fill="rgba(52,211,153,0.38)"/>
+  <line x1="183" y1="162" x2="203" y2="162" stroke="rgba(16,185,129,0.8)" stroke-width="1.5"/>
+
+  <!-- Label -->
+  <text x="150" y="238" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Test Tubes</text>
+</svg>

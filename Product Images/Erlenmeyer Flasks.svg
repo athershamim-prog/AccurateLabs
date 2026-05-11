@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <defs>
+    <clipPath id="ec">
+      <path d="M127,58 L127,148 L68,228 L232,228 L173,148 L173,58 Z"/>
+    </clipPath>
+  </defs>
+  <!-- Flask outline -->
+  <path d="M127,58 L127,148 L68,228 L232,228 L173,148 L173,58 Z"
+        fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Top opening -->
+  <line x1="127" y1="58" x2="173" y2="58" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Liquid (amber, ~35% fill) -->
+  <rect x="60" y="182" width="180" height="48" fill="rgba(245,158,11,0.28)" clip-path="url(#ec)"/>
+  <!-- Liquid surface -->
+  <line x1="68" y1="182" x2="232" y2="182" stroke="rgba(245,158,11,0.7)" stroke-width="1.5" clip-path="url(#ec)"/>
+  <!-- Graduation mark on neck -->
+  <line x1="127" y1="105" x2="115" y2="105" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="112" y="109" font-family="Arial,sans-serif" font-size="10" fill="#1d4ed8" text-anchor="end">250</text>
+  <line x1="127" y1="128" x2="119" y2="128" stroke="#1d4ed8" stroke-width="1"/>
+  <!-- Label -->
+  <text x="150" y="258" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Erlenmeyer Flask 250 mL</text>
+</svg>
