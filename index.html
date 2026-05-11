@@ -584,16 +584,45 @@
 
       hpForm.addEventListener('submit', e => {
         e.preventDefault();
-        const data = Object.fromEntries(new FormData(hpForm));
-        if (!data.name || !data.email) {
+        const nameVal    = hpForm.querySelector('[name="name"]').value.trim();
+        const emailVal   = hpForm.querySelector('[name="email"]').value.trim();
+        const phoneVal   = hpForm.querySelector('[name="phone"]').value.trim();
+        const messageVal = hpForm.querySelector('textarea').value.trim();
+
+        if (!nameVal || !emailVal) {
           hpModalMsg.textContent = 'Please provide your name and email.';
           hpModalMsg.className = 'modal__msg error';
           return;
         }
-        hpModalMsg.textContent = 'Thank you! Your enquiry has been received. We will contact you shortly.';
-        hpModalMsg.className = 'modal__msg success';
-        hpForm.reset();
-        setTimeout(hpCloseModal, 2800);
+
+        const btn = hpForm.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        const productName = document.getElementById('hpModalProductName').textContent;
+        const catName     = document.getElementById('hpModalCatName').textContent;
+
+        emailjs.send('service_ihfi0rg', 'template_i8vi932', {
+          customer_name: nameVal,
+          from_email:    emailVal,
+          phone:         phoneVal || 'Not provided',
+          subject:       'Product Enquiry: ' + productName + ' (' + catName + ')',
+          message:       messageVal || 'No additional message.',
+        })
+        .then(() => {
+          hpModalMsg.textContent = 'Thank you! Your enquiry has been received. We will contact you shortly.';
+          hpModalMsg.className = 'modal__msg success';
+          hpForm.reset();
+          setTimeout(hpCloseModal, 2800);
+        })
+        .catch(() => {
+          hpModalMsg.textContent = 'Something went wrong. Please try again or call us directly.';
+          hpModalMsg.className = 'modal__msg error';
+        })
+        .finally(() => {
+          btn.disabled = false;
+          btn.textContent = 'Send Enquiry';
+        });
       });
     }
   </script>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products — Accurate Labs</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('yIFWT9_-z73nMxrT-');</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     /* ── Products Page ─────────────────────────────────── */
@@ -366,16 +368,45 @@
 
     enquireForm.addEventListener('submit', e => {
       e.preventDefault();
-      const data = Object.fromEntries(new FormData(enquireForm));
-      if (!data.name || !data.email) {
+
+      const nameVal    = enquireForm.querySelector('[name="name"]').value.trim();
+      const emailVal   = enquireForm.querySelector('[name="email"]').value.trim();
+      const phoneVal   = enquireForm.querySelector('[name="phone"]').value.trim();
+      const messageVal = enquireForm.querySelector('[name="message"]').value.trim();
+      const productName = document.getElementById('modalProductName').textContent;
+      const catName     = document.getElementById('modalCatName').textContent;
+
+      if (!nameVal || !emailVal) {
         modalMsg.textContent = 'Please provide your name and email.';
         modalMsg.className = 'modal__msg error';
         return;
       }
-      modalMsg.textContent = 'Thank you! Your enquiry has been received. We will contact you shortly.';
-      modalMsg.className = 'modal__msg success';
-      enquireForm.reset();
-      setTimeout(closeModal, 2800);
+
+      const submitBtn = enquireForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      emailjs.send('service_ihfi0rg', 'template_i8vi932', {
+        customer_name: nameVal,
+        from_email:    emailVal,
+        phone:         phoneVal || 'Not provided',
+        subject:       'Product Enquiry: ' + productName,
+        message:       (messageVal || 'No additional message.') + '\n\nProduct: ' + productName + '\n' + catName,
+      })
+      .then(() => {
+        modalMsg.textContent = 'Thank you! Your enquiry has been received. We will contact you shortly.';
+        modalMsg.className = 'modal__msg success';
+        enquireForm.reset();
+        setTimeout(closeModal, 2800);
+      })
+      .catch(() => {
+        modalMsg.textContent = 'Something went wrong. Please try again or call us directly.';
+        modalMsg.className = 'modal__msg error';
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Enquiry';
+      });
     });
 
     /* ── Open from URL param ── */

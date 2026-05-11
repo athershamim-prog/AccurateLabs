@@ -101,8 +101,13 @@ contactForm.addEventListener('submit', e => {
   formMsg.textContent = '';
   formMsg.className   = 'form__msg';
 
-  const data = Object.fromEntries(new FormData(contactForm));
-  if (!data.name || !data.email || !data.subject || !data.message) {
+  const nameVal    = contactForm.querySelector('[name="name"]').value.trim();
+  const emailVal   = contactForm.querySelector('[name="email"]').value.trim();
+  const phoneVal   = contactForm.querySelector('[name="phone"]').value.trim();
+  const subjectVal = contactForm.querySelector('[name="subject"]').value.trim();
+  const messageVal = contactForm.querySelector('[name="message"]').value.trim();
+
+  if (!nameVal || !emailVal || !subjectVal || !messageVal) {
     formMsg.textContent = 'Please fill in all required fields.';
     formMsg.classList.add('error');
     return;
@@ -113,11 +118,11 @@ contactForm.addEventListener('submit', e => {
   btn.textContent = 'Sending...';
 
   emailjs.send('service_ihfi0rg', 'template_i8vi932', {
-    from_name:  data.name,
-    from_email: data.email,
-    phone:      data.phone || 'Not provided',
-    subject:    data.subject,
-    message:    data.message,
+    customer_name: nameVal,
+    from_email:    emailVal,
+    phone:         phoneVal || 'Not provided',
+    subject:       subjectVal,
+    message:       messageVal,
   })
   .then(() => {
     formMsg.textContent = 'Thank you! Your message has been sent. We will be in touch soon.';
