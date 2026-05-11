@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Base -->
+  <rect x="55" y="178" width="190" height="82" rx="6" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Display -->
+  <rect x="62" y="186" width="105" height="44" rx="4" fill="#0f172a" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="115" y="203" font-family="Arial,sans-serif" font-size="8" fill="#38bdf8" text-anchor="middle">g</text>
+  <text x="115" y="222" font-family="Arial,sans-serif" font-size="17" fill="#7dd3fc" text-anchor="middle" font-weight="700">0.000</text>
+  <!-- Buttons -->
+  <rect x="175" y="190" width="24" height="12" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="203" y="190" width="24" height="12" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="175" y="207" width="24" height="12" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="203" y="207" width="24" height="12" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="187" y="199" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">TARE</text>
+  <text x="215" y="199" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">ON</text>
+  <text x="187" y="217" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">CAL</text>
+  <text x="215" y="217" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">UNIT</text>
+  <!-- Leveling bubble -->
+  <circle cx="220" cy="248" r="9" fill="white" stroke="#1d4ed8" stroke-width="1.5"/>
+  <circle cx="220" cy="248" r="3.5" fill="rgba(96,165,250,0.5)"/>
+  <!-- Back windshield (short, partial) -->
+  <rect x="80" y="105" width="140" height="75" rx="4" fill="rgba(219,234,254,0.2)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <rect x="80" y="103" width="140" height="5" rx="2" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Weighing pan (large, flat) -->
+  <ellipse cx="150" cy="172" rx="55" ry="8" fill="rgba(219,234,254,0.8)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Pan stem structure -->
+  <rect x="144" y="130" width="12" height="44" rx="3" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Calibration weight on pan -->
+  <rect x="132" y="152" width="36" height="20" rx="5" fill="rgba(147,197,253,0.3)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="150" y="165" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle">200 g</text>
+  <!-- Feet -->
+  <ellipse cx="78" cy="261" rx="10" ry="4" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <ellipse cx="222" cy="261" rx="10" ry="4" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Label -->
+  <text x="150" y="284" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Precision Balance</text>
+</svg>

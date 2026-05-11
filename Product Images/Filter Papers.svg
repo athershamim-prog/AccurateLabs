@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Stack of circular filter papers (top view, slight depth) -->
+  <!-- Back papers (stack) -->
+  <ellipse cx="155" cy="122" rx="78" ry="10" fill="rgba(254,249,195,0.7)" stroke="#a16207" stroke-width="1.5"/>
+  <ellipse cx="153" cy="117" rx="78" ry="10" fill="rgba(254,249,195,0.7)" stroke="#a16207" stroke-width="1.5"/>
+  <ellipse cx="152" cy="112" rx="78" ry="10" fill="rgba(254,249,195,0.7)" stroke="#a16207" stroke-width="1.5"/>
+  <ellipse cx="152" cy="107" rx="78" ry="10" fill="rgba(254,249,195,0.7)" stroke="#a16207" stroke-width="1.5"/>
+  <!-- Top paper of stack -->
+  <circle cx="152" cy="100" r="78" fill="rgba(255,253,232,0.9)" stroke="#a16207" stroke-width="2"/>
+  <!-- Concentric rings on filter paper -->
+  <circle cx="152" cy="100" r="62" fill="none" stroke="rgba(161,98,7,0.2)" stroke-width="1"/>
+  <circle cx="152" cy="100" r="46" fill="none" stroke="rgba(161,98,7,0.2)" stroke-width="1"/>
+  <circle cx="152" cy="100" r="30" fill="none" stroke="rgba(161,98,7,0.2)" stroke-width="1"/>
+  <!-- "Whatman" style label at center -->
+  <text x="152" y="104" font-family="Arial,sans-serif" font-size="9" fill="#92400e" text-anchor="middle">Grade 1</text>
+  <!-- Folded cone filter (beside stack) -->
+  <path d="M58,155 L105,248 L152,155 Z" fill="rgba(255,253,232,0.9)" stroke="#a16207" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Fold line on cone -->
+  <line x1="105" y1="155" x2="105" y2="248" stroke="rgba(161,98,7,0.4)" stroke-width="1.5"/>
+  <!-- Size label on cone -->
+  <text x="105" y="200" font-family="Arial,sans-serif" font-size="8" fill="#92400e" text-anchor="middle">∅ 90mm</text>
+  <!-- Label -->
+  <text x="200" y="240" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Filter Papers</text>
+</svg>

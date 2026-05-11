@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Syringe body (barrel) -->
+  <rect x="55" y="118" width="140" height="38" rx="5" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Plunger rod -->
+  <rect x="195" y="130" width="55" height="14" rx="3" fill="rgba(219,234,254,0.4)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Plunger thumb pad -->
+  <rect x="245" y="122" width="14" height="30" rx="3" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Plunger stopper inside barrel -->
+  <rect x="192" y="119" width="6" height="36" rx="2" fill="rgba(30,58,138,0.25)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Graduation marks on barrel -->
+  <line x1="100" y1="118" x2="100" y2="112" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="100" y="110" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle">5</text>
+  <line x1="130" y1="118" x2="130" y2="112" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="130" y="110" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle">3</text>
+  <line x1="160" y1="118" x2="160" y2="112" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="160" y="110" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle">1</text>
+  <!-- Liquid in barrel -->
+  <rect x="63" y="119" width="129" height="36" fill="rgba(96,165,250,0.28)"/>
+  <!-- Luer-lock connection -->
+  <rect x="48" y="122" width="10" height="30" rx="2" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Filter housing disc -->
+  <rect x="22" y="112" width="30" height="50" rx="6" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Filter disc inside housing -->
+  <ellipse cx="37" cy="137" rx="10" ry="10" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Membrane cross-hatch -->
+  <line x1="28" y1="137" x2="46" y2="137" stroke="rgba(30,58,138,0.3)" stroke-width="1"/>
+  <line x1="37" y1="128" x2="37" y2="146" stroke="rgba(30,58,138,0.3)" stroke-width="1"/>
+  <!-- Filter label -->
+  <text x="37" y="155" font-family="Arial,sans-serif" font-size="6.5" fill="#1d4ed8" text-anchor="middle">0.22µm</text>
+  <!-- Outlet nozzle -->
+  <rect x="10" y="130" width="14" height="14" rx="3" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <rect x="6" y="133" width="6" height="8" rx="2" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Flow arrows -->
+  <line x1="6" y1="137" x2="-2" y2="137" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Label -->
+  <text x="150" y="200" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Syringe Filters</text>
+  <text x="150" y="216" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">0.22 µm / 0.45 µm PTFE</text>
+</svg>

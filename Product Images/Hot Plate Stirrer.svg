@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Flask on top (optional, makes it recognisable) -->
+  <path d="M138,68 L138,110 L100,158 L200,158 L162,110 L162,68 Z" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="138" y1="68" x2="162" y2="68" stroke="#1d4ed8" stroke-width="2"/>
+  <rect x="120" y="155" width="60" height="6" fill="rgba(96,165,250,0.35)"/>
+  <!-- Heating plate surface -->
+  <ellipse cx="150" cy="168" rx="70" ry="12" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Heat glow on plate -->
+  <ellipse cx="150" cy="168" rx="50" ry="8" fill="rgba(239,68,68,0.12)"/>
+  <!-- Body box -->
+  <rect x="75" y="170" width="150" height="88" rx="7" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Display -->
+  <rect x="82" y="180" width="88" height="32" rx="4" fill="#0f172a" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="126" y="193" font-family="Arial,sans-serif" font-size="8" fill="#38bdf8" text-anchor="middle">TEMP  80°C</text>
+  <text x="126" y="206" font-family="Arial,sans-serif" font-size="8" fill="#7dd3fc" text-anchor="middle">SPEED 300rpm</text>
+  <!-- Dials -->
+  <circle cx="198" cy="193" r="15" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="198" cy="193" r="5" fill="rgba(219,234,254,0.9)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="198" y="214" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">TEMP</text>
+  <circle cx="210" cy="228" r="13" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="210" cy="228" r="4" fill="rgba(219,234,254,0.9)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="210" y="248" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">SPEED</text>
+  <!-- LED indicators -->
+  <circle cx="90" cy="225" r="5" fill="#f59e0b"/>
+  <circle cx="105" cy="225" r="5" fill="#22c55e"/>
+  <text x="90" y="240" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">HT</text>
+  <text x="105" y="240" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">STR</text>
+  <!-- Label -->
+  <text x="150" y="280" font-family="Arial,sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle" font-weight="600">Hot Plate Stirrer</text>
+</svg>

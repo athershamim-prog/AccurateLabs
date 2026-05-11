@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Stacked membrane discs (slight offset for depth) -->
+  <ellipse cx="153" cy="178" rx="72" ry="10" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <ellipse cx="152" cy="172" rx="72" ry="10" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <ellipse cx="151" cy="166" rx="72" ry="10" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Top membrane disc (full view) -->
+  <circle cx="150" cy="155" r="72" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Lattice pore pattern on top membrane -->
+  <g stroke="rgba(30,58,138,0.25)" stroke-width="1" fill="none">
+    <line x1="90" y1="155" x2="210" y2="155"/>
+    <line x1="150" y1="95" x2="150" y2="215"/>
+    <line x1="99" y1="104" x2="201" y2="206"/>
+    <line x1="201" y1="104" x2="99" y2="206"/>
+    <circle cx="150" cy="155" r="36"/>
+    <circle cx="150" cy="155" r="18"/>
+  </g>
+  <!-- Pore dots -->
+  <g fill="rgba(30,58,138,0.3)">
+    <circle cx="150" cy="155" r="3"/>
+    <circle cx="168" cy="155" r="2.5"/><circle cx="132" cy="155" r="2.5"/>
+    <circle cx="150" cy="137" r="2.5"/><circle cx="150" cy="173" r="2.5"/>
+    <circle cx="163" cy="143" r="2"/><circle cx="137" cy="167" r="2"/>
+    <circle cx="137" cy="143" r="2"/><circle cx="163" cy="167" r="2"/>
+  </g>
+  <!-- Size text on membrane -->
+  <text x="150" y="156" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle" dy="4">0.45 µm</text>
+  <!-- Label strip at edge -->
+  <rect x="185" y="148" width="34" height="14" rx="2" fill="rgba(219,234,254,0.8)" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="202" y="158" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">PVDF</text>
+  <!-- Product label -->
+  <text x="150" y="255" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Membrane Filters</text>
+</svg>

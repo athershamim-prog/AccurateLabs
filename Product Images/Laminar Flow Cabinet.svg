@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Cabinet body -->
+  <rect x="45" y="42" width="210" height="220" rx="5" fill="rgba(219,234,254,0.4)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- HEPA filter at back (rear wall) -->
+  <rect x="55" y="52" width="190" height="40" rx="4" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="150" y="67" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">HEPA FILTER</text>
+  <text x="150" y="79" font-family="Arial,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">Horizontal Laminar Flow</text>
+  <!-- Filter grid -->
+  <line x1="75" y1="52" x2="75" y2="92" stroke="rgba(30,58,138,0.2)" stroke-width="1"/>
+  <line x1="100" y1="52" x2="100" y2="92" stroke="rgba(30,58,138,0.2)" stroke-width="1"/>
+  <line x1="125" y1="52" x2="125" y2="92" stroke="rgba(30,58,138,0.2)" stroke-width="1"/>
+  <line x1="150" y1="52" x2="150" y2="92" stroke="rgba(30,58,138,0.2)" stroke-width="1"/>
+  <line x1="175" y1="52" x2="175" y2="92" stroke="rgba(30,58,138,0.2)" stroke-width="1"/>
+  <line x1="200" y1="52" x2="200" y2="92" stroke="rgba(30,58,138,0.2)" stroke-width="1"/>
+  <line x1="225" y1="52" x2="225" y2="92" stroke="rgba(30,58,138,0.2)" stroke-width="1"/>
+  <!-- UV lamp bar -->
+  <rect x="55" y="94" width="190" height="8" rx="3" fill="rgba(167,139,250,0.4)" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="150" y="101" font-family="Arial,sans-serif" font-size="6.5" fill="#7c3aed" text-anchor="middle">UV LAMP</text>
+  <!-- Open work area -->
+  <rect x="55" y="104" width="190" height="128" rx="2" fill="rgba(219,234,254,0.1)" stroke="#1d4ed8" stroke-width="1" stroke-dasharray="0"/>
+  <!-- Work surface -->
+  <rect x="55" y="228" width="190" height="8" rx="2" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Horizontal airflow arrows -->
+  <line x1="62" y1="130" x2="90" y2="130" stroke="rgba(96,165,250,0.6)" stroke-width="1.5"/>
+  <path d="M86,125 L92,130 L86,135" fill="rgba(96,165,250,0.6)"/>
+  <line x1="62" y1="155" x2="90" y2="155" stroke="rgba(96,165,250,0.6)" stroke-width="1.5"/>
+  <path d="M86,150 L92,155 L86,160" fill="rgba(96,165,250,0.6)"/>
+  <line x1="62" y1="180" x2="90" y2="180" stroke="rgba(96,165,250,0.6)" stroke-width="1.5"/>
+  <path d="M86,175 L92,180 L86,185" fill="rgba(96,165,250,0.6)"/>
+  <!-- Flask on work surface -->
+  <path d="M148,205 L148,225 L135,228 L165,228 L152,225 L152,205 Z" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Control panel -->
+  <rect x="50" y="250" width="200" height="30" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <circle cx="80" cy="265" r="7" fill="#22c55e"/>
+  <circle cx="100" cy="265" r="7" fill="rgba(167,139,250,0.6)"/>
+  <circle cx="120" cy="265" r="7" fill="#f59e0b"/>
+  <text x="80" y="278" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">FAN</text>
+  <text x="100" y="278" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">UV</text>
+  <text x="120" y="278" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">LIGHT</text>
+  <rect x="140" y="256" width="100" height="18" rx="3" fill="#0f172a" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="190" y="268" font-family="Arial,sans-serif" font-size="8" fill="#38bdf8" text-anchor="middle">0.45 m/s  ISO 5</text>
+  <text x="150" y="298" font-family="Arial,sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle" font-weight="600">Laminar Flow Cabinet</text>
+</svg>

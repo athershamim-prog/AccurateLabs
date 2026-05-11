@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Dropping bottle body -->
+  <rect x="115" y="100" width="70" height="140" rx="6" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Neck -->
+  <rect x="133" y="65" width="34" height="38" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Rubber teat/dropper -->
+  <ellipse cx="150" cy="52" rx="18" ry="16" fill="rgba(239,68,68,0.35)" stroke="#991b1b" stroke-width="2"/>
+  <!-- Teat tip -->
+  <path d="M144,65 Q150,72 156,65" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Amber/orange liquid (phenolphthalein or methyl orange) -->
+  <rect x="116" y="168" width="68" height="71" fill="rgba(251,146,60,0.38)"/>
+  <line x1="116" y1="168" x2="184" y2="168" stroke="rgba(251,146,60,0.7)" stroke-width="1.5"/>
+  <!-- Label on bottle -->
+  <rect x="120" y="112" width="60" height="48" rx="3" fill="white" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="150" y="127" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">METHYL</text>
+  <text x="150" y="139" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">ORANGE</text>
+  <text x="150" y="151" font-family="Arial,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">pH Indicator</text>
+  <!-- Drop coming out of tip -->
+  <ellipse cx="150" cy="98" rx="4" ry="5" fill="rgba(251,146,60,0.6)" stroke="rgba(251,146,60,0.8)" stroke-width="1"/>
+  <!-- Label -->
+  <text x="150" y="268" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Indicators</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Base unit -->
+  <rect x="55" y="175" width="190" height="95" rx="7" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Display -->
+  <rect x="62" y="183" width="110" height="48" rx="4" fill="#0f172a" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="117" y="200" font-family="Arial,sans-serif" font-size="8" fill="#38bdf8" text-anchor="middle">Moisture Content</text>
+  <text x="117" y="218" font-family="Arial,sans-serif" font-size="18" fill="#7dd3fc" text-anchor="middle" font-weight="700">2.5%</text>
+  <!-- Buttons -->
+  <rect x="180" y="183" width="22" height="12" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="206" y="183" width="22" height="12" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="180" y="200" width="22" height="12" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="206" y="200" width="22" height="12" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="191" y="192" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">START</text>
+  <text x="217" y="192" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">STOP</text>
+  <text x="191" y="209" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">TARE</text>
+  <text x="217" y="209" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">PROG</text>
+  <!-- Status LED -->
+  <circle cx="220" cy="248" r="7" fill="#f59e0b"/>
+  <text x="220" y="260" font-family="Arial,sans-serif" font-size="6.5" fill="#1d4ed8" text-anchor="middle">DRY</text>
+  <!-- Sample pan area -->
+  <rect x="100" y="145" width="100" height="8" rx="2" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Sample pan (flat, round) -->
+  <ellipse cx="150" cy="145" rx="44" ry="6" fill="rgba(219,234,254,0.8)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Sample material on pan -->
+  <ellipse cx="150" cy="143" rx="35" ry="4" fill="rgba(245,222,130,0.5)" stroke="rgba(161,98,7,0.4)" stroke-width="1"/>
+  <!-- Halogen lamp arm (hinged, shown open/horizontal) -->
+  <!-- Arm base pivot -->
+  <circle cx="150" cy="145" r="5" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Arm extending up and over -->
+  <path d="M150,140 L150,108 Q150,85 80,72" stroke="#1d4ed8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Halogen lamp housing -->
+  <rect x="55" y="58" width="50" height="24" rx="8" fill="rgba(255,237,213,0.8)" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Lamp glow -->
+  <ellipse cx="80" cy="70" rx="18" ry="8" fill="rgba(253,224,71,0.4)"/>
+  <!-- Heat rays -->
+  <line x1="75" y1="82" x2="73" y2="90" stroke="rgba(239,68,68,0.5)" stroke-width="1.5"/>
+  <line x1="80" y1="83" x2="80" y2="92" stroke="rgba(239,68,68,0.5)" stroke-width="1.5"/>
+  <line x1="85" y1="82" x2="87" y2="90" stroke="rgba(239,68,68,0.5)" stroke-width="1.5"/>
+  <!-- Label -->
+  <text x="150" y="288" font-family="Arial,sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle" font-weight="600">Moisture Analyser</text>
+</svg>

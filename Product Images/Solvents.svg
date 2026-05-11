@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Boston round bottle -->
+  <!-- Neck -->
+  <rect x="135" y="52" width="30" height="40" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Shoulder transition -->
+  <path d="M135,90 Q118,106 118,120 M165,90 Q182,106 182,120" stroke="#1d4ed8" stroke-width="2.5" fill="none"/>
+  <!-- Body (cylindrical) -->
+  <rect x="118" y="118" width="64" height="130" rx="6" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Cap -->
+  <rect x="130" y="44" width="40" height="14" rx="5" fill="rgba(30,58,138,0.25)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Liquid fill (~70%) -->
+  <rect x="119" y="155" width="62" height="92" fill="rgba(147,197,253,0.35)"/>
+  <line x1="119" y1="155" x2="181" y2="155" stroke="rgba(96,165,250,0.7)" stroke-width="1.5"/>
+  <!-- Label -->
+  <rect x="122" y="168" width="56" height="52" rx="3" fill="white" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="150" y="183" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">ETHANOL</text>
+  <text x="150" y="195" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">96% v/v</text>
+  <text x="150" y="207" font-family="Arial,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">500 mL</text>
+  <!-- Label border lines -->
+  <line x1="124" y1="210" x2="176" y2="210" stroke="#1d4ed8" stroke-width="0.5"/>
+  <!-- Label text -->
+  <text x="150" y="268" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Solvents</text>
+</svg>

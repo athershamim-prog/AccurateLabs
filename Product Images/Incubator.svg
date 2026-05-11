@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Body -->
+  <rect x="55" y="55" width="190" height="195" rx="8" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Door frame -->
+  <rect x="68" y="68" width="128" height="162" rx="5" fill="rgba(219,234,254,0.3)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Glass window on door -->
+  <rect x="76" y="76" width="112" height="146" rx="4" fill="rgba(219,234,254,0.2)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Shelves inside (visible through glass) -->
+  <line x1="79" y1="118" x2="185" y2="118" stroke="#1d4ed8" stroke-width="1.5"/>
+  <line x1="79" y1="158" x2="185" y2="158" stroke="#1d4ed8" stroke-width="1.5"/>
+  <line x1="79" y1="198" x2="185" y2="198" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Sample flasks on shelves (simplified) -->
+  <rect x="88" y="104" width="16" height="14" rx="2" fill="rgba(96,165,250,0.3)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="110" y="104" width="16" height="14" rx="2" fill="rgba(96,165,250,0.3)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="132" y="104" width="16" height="14" rx="2" fill="rgba(245,158,11,0.3)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="88" y="143" width="16" height="15" rx="2" fill="rgba(245,158,11,0.3)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="110" y="143" width="16" height="15" rx="2" fill="rgba(52,211,153,0.3)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="132" y="143" width="16" height="15" rx="2" fill="rgba(96,165,250,0.3)" stroke="#1d4ed8" stroke-width="1"/>
+  <!-- Door handle -->
+  <rect x="196" y="135" width="10" height="40" rx="4" fill="rgba(219,234,254,0.8)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Right side panel (controls) -->
+  <rect x="200" y="68" width="38" height="162" rx="4" fill="rgba(219,234,254,0.4)" stroke="#1d4ed8" stroke-width="1"/>
+  <!-- Display -->
+  <rect x="204" y="76" width="30" height="32" rx="3" fill="#0f172a" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="219" y="89" font-family="Arial,sans-serif" font-size="7.5" fill="#38bdf8" text-anchor="middle">SET</text>
+  <text x="219" y="101" font-family="Arial,sans-serif" font-size="9" fill="#7dd3fc" text-anchor="middle" font-weight="700">37°C</text>
+  <!-- Dial -->
+  <circle cx="219" cy="134" r="12" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <line x1="219" y1="123" x2="219" y2="129" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="219" y="152" font-family="Arial,sans-serif" font-size="6.5" fill="#1d4ed8" text-anchor="middle">TEMP</text>
+  <!-- Timer -->
+  <rect x="204" y="158" width="30" height="20" rx="2" fill="#0f172a" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="219" y="172" font-family="Arial,sans-serif" font-size="7.5" fill="#38bdf8" text-anchor="middle">24:00h</text>
+  <!-- Power LED -->
+  <circle cx="219" cy="192" r="5" fill="#f59e0b"/>
+  <!-- Label -->
+  <text x="130" y="276" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Incubator</text>
+</svg>

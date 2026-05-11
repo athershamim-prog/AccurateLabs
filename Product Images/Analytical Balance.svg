@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Base unit -->
+  <rect x="58" y="188" width="184" height="72" rx="6" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Display on base -->
+  <rect x="65" y="196" width="100" height="36" rx="4" fill="#0f172a" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="115" y="210" font-family="Arial,sans-serif" font-size="8" fill="#38bdf8" text-anchor="middle">g</text>
+  <text x="115" y="225" font-family="Arial,sans-serif" font-size="16" fill="#7dd3fc" text-anchor="middle" font-weight="700">0.0000</text>
+  <!-- Buttons -->
+  <rect x="172" y="200" width="22" height="11" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="198" y="200" width="22" height="11" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="183" y="209" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">TARE</text>
+  <text x="209" y="209" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">CAL</text>
+  <!-- Leveling bubble -->
+  <circle cx="222" cy="228" r="8" fill="white" stroke="#1d4ed8" stroke-width="1.5"/>
+  <circle cx="222" cy="228" r="3" fill="rgba(96,165,250,0.5)"/>
+  <!-- Draft shield (3-sided glass enclosure) -->
+  <!-- Back panel -->
+  <rect x="68" y="100" width="164" height="90" rx="4" fill="rgba(219,234,254,0.2)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Left glass panel -->
+  <path d="M68,100 L68,190 L78,188 L78,102 Z" fill="rgba(219,234,254,0.3)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Right glass panel -->
+  <path d="M232,100 L232,190 L222,188 L222,102 Z" fill="rgba(219,234,254,0.3)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Top of shield -->
+  <rect x="68" y="98" width="164" height="6" rx="2" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Side door handle (right) -->
+  <rect x="232" y="135" width="6" height="30" rx="3" fill="rgba(219,234,254,0.8)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Weighing pan inside shield -->
+  <ellipse cx="150" cy="182" rx="38" ry="6" fill="rgba(219,234,254,0.8)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Pan stem -->
+  <line x1="150" y1="176" x2="150" y2="190" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Leveling feet -->
+  <ellipse cx="82" cy="262" rx="10" ry="5" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <ellipse cx="218" cy="262" rx="10" ry="5" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Label -->
+  <text x="150" y="286" font-family="Arial,sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle" font-weight="600">Analytical Balance</text>
+</svg>

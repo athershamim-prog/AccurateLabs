@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- 50 mL Falcon tube (left) -->
+  <!-- Cap -->
+  <rect x="82" y="42" width="46" height="18" rx="7" fill="rgba(29,78,216,0.5)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Body (straight top, tapered bottom) -->
+  <path d="M82,58 L82,202 Q82,220 105,220 Q128,220 128,202 L128,58 Z" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Liquid (yellow, ~40%) -->
+  <path d="M83,148 L83,202 Q83,219 105,219 Q127,219 127,202 L127,148 Z" fill="rgba(252,211,77,0.35)"/>
+  <line x1="83" y1="148" x2="127" y2="148" stroke="rgba(245,158,11,0.6)" stroke-width="1.5"/>
+  <!-- Graduation marks -->
+  <line x1="128" y1="78" x2="136" y2="78" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="139" y="82" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8">50</text>
+  <line x1="128" y1="108" x2="134" y2="108" stroke="#1d4ed8" stroke-width="1"/>
+  <line x1="128" y1="138" x2="136" y2="138" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="139" y="142" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8">25</text>
+  <line x1="128" y1="168" x2="134" y2="168" stroke="#1d4ed8" stroke-width="1"/>
+  <line x1="128" y1="198" x2="136" y2="198" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="139" y="202" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8">10</text>
+  <text x="105" y="238" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">50 mL</text>
+
+  <!-- 15 mL Falcon tube (right) -->
+  <rect x="172" y="75" width="40" height="15" rx="6" fill="rgba(29,78,216,0.5)" stroke="#1d4ed8" stroke-width="2"/>
+  <path d="M172,88 L172,212 Q172,228 192,228 Q212,228 212,212 L212,88 Z" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Liquid (blue ~60%) -->
+  <path d="M173,140 L173,212 Q173,227 192,227 Q211,227 211,212 L211,140 Z" fill="rgba(96,165,250,0.35)"/>
+  <line x1="173" y1="140" x2="211" y2="140" stroke="rgba(59,130,246,0.6)" stroke-width="1.5"/>
+  <!-- Graduation marks -->
+  <line x1="212" y1="104" x2="218" y2="104" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="221" y="108" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8">15</text>
+  <line x1="212" y1="140" x2="218" y2="140" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="221" y="144" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8">7</text>
+  <line x1="212" y1="178" x2="218" y2="178" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="221" y="182" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8">3</text>
+  <text x="192" y="246" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">15 mL</text>
+
+  <!-- Label -->
+  <text x="150" y="278" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Centrifuge Tubes</text>
+</svg>

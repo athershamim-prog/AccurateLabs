@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Base (U-shaped foot) -->
+  <path d="M75,248 L75,268 L115,268 L115,248" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M185,248 L185,268 L225,268 L225,248" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="75" y="248" width="150" height="8" rx="2" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Arm/pillar -->
+  <rect x="138" y="100" width="24" height="148" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Stage -->
+  <rect x="95" y="188" width="110" height="14" rx="4" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Stage clips -->
+  <rect x="110" y="182" width="12" height="8" rx="2" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <rect x="178" y="182" width="12" height="8" rx="2" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Slide on stage -->
+  <rect x="120" y="186" width="60" height="6" rx="1" fill="rgba(147,197,253,0.5)" stroke="#1d4ed8" stroke-width="1"/>
+  <!-- Condenser (below stage) -->
+  <rect x="136" y="202" width="28" height="40" rx="3" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Light source nub -->
+  <ellipse cx="150" cy="244" rx="10" ry="5" fill="rgba(253,224,71,0.4)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Body tube / head -->
+  <rect x="128" y="62" width="44" height="42" rx="5" fill="rgba(219,234,254,0.55)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Nosepiece (revolving) -->
+  <ellipse cx="150" cy="104" rx="24" ry="8" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Objectives (3) -->
+  <rect x="142" y="112" width="10" height="24" rx="3" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <rect x="157" y="112" width="9" height="32" rx="3" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <rect x="127" y="112" width="9" height="18" rx="3" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Binocular eyepiece -->
+  <rect x="132" y="38" width="16" height="26" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2"/>
+  <rect x="152" y="38" width="16" height="26" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Eyepiece cups -->
+  <ellipse cx="140" cy="38" rx="7" ry="4" fill="rgba(30,58,138,0.2)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <ellipse cx="160" cy="38" rx="7" ry="4" fill="rgba(30,58,138,0.2)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Coarse focus knob -->
+  <ellipse cx="104" cy="165" rx="12" ry="18" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <ellipse cx="196" cy="165" rx="12" ry="18" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Fine focus -->
+  <ellipse cx="104" cy="190" rx="8" ry="12" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <ellipse cx="196" cy="190" rx="8" ry="12" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Label -->
+  <text x="150" y="293" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Microscope</text>
+</svg>

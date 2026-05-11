@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Buchner funnel wide bowl -->
+  <path d="M75,65 L105,148 L195,148 L225,65 Z" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Bowl rim -->
+  <line x1="75" y1="65" x2="225" y2="65" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Perforated plate (flat bottom of bowl) -->
+  <rect x="105" y="140" width="90" height="10" rx="2" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Filter paper on plate (slight dome) -->
+  <path d="M107,140 Q150,134 193,140" fill="rgba(255,253,232,0.8)" stroke="#a16207" stroke-width="1.5"/>
+  <!-- Perforations in plate -->
+  <circle cx="125" cy="145" r="2.5" fill="rgba(30,58,138,0.3)" stroke="#1d4ed8" stroke-width="0.8"/>
+  <circle cx="138" cy="145" r="2.5" fill="rgba(30,58,138,0.3)" stroke="#1d4ed8" stroke-width="0.8"/>
+  <circle cx="150" cy="145" r="2.5" fill="rgba(30,58,138,0.3)" stroke="#1d4ed8" stroke-width="0.8"/>
+  <circle cx="162" cy="145" r="2.5" fill="rgba(30,58,138,0.3)" stroke="#1d4ed8" stroke-width="0.8"/>
+  <circle cx="175" cy="145" r="2.5" fill="rgba(30,58,138,0.3)" stroke="#1d4ed8" stroke-width="0.8"/>
+  <circle cx="131" cy="137" r="2" fill="rgba(30,58,138,0.25)" stroke="#1d4ed8" stroke-width="0.5"/>
+  <circle cx="150" cy="134" r="2" fill="rgba(30,58,138,0.25)" stroke="#1d4ed8" stroke-width="0.5"/>
+  <circle cx="169" cy="137" r="2" fill="rgba(30,58,138,0.25)" stroke="#1d4ed8" stroke-width="0.5"/>
+  <!-- Stem -->
+  <rect x="132" y="150" width="36" height="85" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Stem base flange -->
+  <rect x="120" y="232" width="60" height="10" rx="4" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Liquid sample in bowl (very light) -->
+  <path d="M108,100 L110,140 L190,140 L192,100 Z" fill="rgba(96,165,250,0.15)"/>
+  <!-- Label -->
+  <text x="150" y="262" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Buchner Funnels</text>
+</svg>

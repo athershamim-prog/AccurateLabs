@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Tip box base -->
+  <rect x="58" y="155" width="184" height="105" rx="5" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Box lid (open/removed) -->
+  <rect x="62" y="142" width="184" height="16" rx="4" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Grid lines inside box (hint of wells) -->
+  <line x1="102" y1="158" x2="102" y2="258" stroke="#1d4ed8" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="148" y1="158" x2="148" y2="258" stroke="#1d4ed8" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="194" y1="158" x2="194" y2="258" stroke="#1d4ed8" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <!-- Yellow 200µL tips (back row) -->
+  <path d="M73,155 L70,90 L76,90 Z"  fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M87,155 L84,84 L90,84 Z"  fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M101,155 L98,78 L104,78 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M115,155 L112,82 L118,82 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M129,155 L126,86 L132,86 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M143,155 L140,80 L146,80 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M157,155 L154,88 L160,88 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M171,155 L168,82 L174,82 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M185,155 L182,86 L188,86 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M199,155 L196,80 L202,80 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M213,155 L210,84 L216,84 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M227,155 L224,90 L230,90 Z" fill="rgba(253,224,71,0.7)" stroke="#ca8a04" stroke-width="1.2"/>
+
+  <!-- Label on box side -->
+  <text x="150" y="195" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="700">200 µL</text>
+  <text x="150" y="210" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">96 tips/box</text>
+
+  <!-- Loose tip in front -->
+  <path d="M140,240 L136,200 L164,200 L160,240 Q150,252 140,240 Z" fill="rgba(253,224,71,0.6)" stroke="#ca8a04" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Label -->
+  <text x="150" y="278" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Pipette Tips</text>
+</svg>

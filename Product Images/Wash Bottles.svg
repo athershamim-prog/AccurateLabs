@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Squeeze bottle body (LDPE) -->
+  <!-- Neck -->
+  <rect x="128" y="52" width="44" height="32" rx="5" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Body (slightly wide and round) -->
+  <path d="M110,82 Q105,95 105,115 L105,230 Q105,245 150,245 Q195,245 195,230 L195,115 Q195,95 190,82 Z" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Blue cap with delivery tube -->
+  <rect x="123" y="40" width="54" height="16" rx="6" fill="rgba(29,78,216,0.5)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Delivery tube (bends forward and up) -->
+  <path d="M150,40 Q150,22 158,14 Q166,6 175,10" stroke="#1d4ed8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Tube nozzle -->
+  <ellipse cx="176" cy="10" rx="4" ry="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Water drops from nozzle -->
+  <ellipse cx="182" cy="22" rx="3" ry="4" fill="rgba(96,165,250,0.5)" stroke="rgba(59,130,246,0.6)" stroke-width="1"/>
+  <ellipse cx="188" cy="34" rx="2.5" ry="3.5" fill="rgba(96,165,250,0.4)" stroke="rgba(59,130,246,0.5)" stroke-width="1"/>
+  <!-- Liquid fill (water ~65%) -->
+  <path d="M106,148 Q105,148 105,230 Q105,244 150,244 Q195,244 195,230 L195,148 Z" fill="rgba(96,165,250,0.3)"/>
+  <!-- Water surface (wavy) -->
+  <path d="M106,148 Q120,142 135,148 Q150,154 165,148 Q180,142 195,148" fill="none" stroke="rgba(59,130,246,0.65)" stroke-width="1.5"/>
+  <!-- Label on bottle -->
+  <rect x="112" y="165" width="76" height="52" rx="3" fill="white" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="150" y="181" font-family="Arial,sans-serif" font-size="8.5" fill="#1d4ed8" text-anchor="middle" font-weight="700">DISTILLED</text>
+  <text x="150" y="193" font-family="Arial,sans-serif" font-size="8.5" fill="#1d4ed8" text-anchor="middle" font-weight="700">WATER</text>
+  <line x1="116" y1="198" x2="184" y2="198" stroke="#1d4ed8" stroke-width="0.5"/>
+  <text x="150" y="209" font-family="Arial,sans-serif" font-size="7.5" fill="#6b7280" text-anchor="middle">500 mL</text>
+  <!-- Label -->
+  <text x="150" y="272" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Wash Bottles</text>
+</svg>

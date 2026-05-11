@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- HEPA filter top -->
+  <rect x="50" y="22" width="200" height="28" rx="4" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="150" y="34" font-family="Arial,sans-serif" font-size="8" fill="#1d4ed8" text-anchor="middle" font-weight="700">HEPA FILTER</text>
+  <text x="150" y="44" font-family="Arial,sans-serif" font-size="7" fill="#6b7280" text-anchor="middle">H14 — 99.995%</text>
+  <!-- Cabinet body -->
+  <rect x="50" y="48" width="200" height="215" rx="5" fill="rgba(219,234,254,0.4)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Front glass panel (fully enclosed) -->
+  <rect x="60" y="58" width="180" height="130" rx="4" fill="rgba(147,197,253,0.15)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Arm opening slot at bottom of glass -->
+  <rect x="60" y="182" width="180" height="16" rx="2" fill="rgba(96,165,250,0.12)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="150" y="193" font-family="Arial,sans-serif" font-size="7.5" fill="#1d4ed8" text-anchor="middle">ARM OPENING</text>
+  <!-- UV lamp indicator -->
+  <circle cx="82" cy="70" r="7" fill="rgba(167,139,250,0.5)" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="82" y="82" font-family="Arial,sans-serif" font-size="6" fill="#7c3aed" text-anchor="middle">UV</text>
+  <!-- Work surface inside -->
+  <rect x="63" y="172" width="174" height="6" rx="2" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Air flow (down-flow arrows) -->
+  <line x1="110" y1="72" x2="110" y2="158" stroke="rgba(96,165,250,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M106,158 L110,164 L114,158" fill="none" stroke="rgba(96,165,250,0.5)" stroke-width="1.5"/>
+  <line x1="150" y1="72" x2="150" y2="158" stroke="rgba(96,165,250,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M146,158 L150,164 L154,158" fill="none" stroke="rgba(96,165,250,0.5)" stroke-width="1.5"/>
+  <line x1="190" y1="72" x2="190" y2="158" stroke="rgba(96,165,250,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M186,158 L190,164 L194,158" fill="none" stroke="rgba(96,165,250,0.5)" stroke-width="1.5"/>
+  <!-- Class II label -->
+  <rect x="212" y="62" width="22" height="14" rx="2" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="223" y="72" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">CL II</text>
+  <!-- Control panel -->
+  <rect x="55" y="210" width="190" height="42" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <rect x="62" y="216" width="70" height="28" rx="3" fill="#0f172a" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="97" y="228" font-family="Arial,sans-serif" font-size="7.5" fill="#38bdf8" text-anchor="middle">0.45 m/s</text>
+  <text x="97" y="239" font-family="Arial,sans-serif" font-size="7" fill="#7dd3fc" text-anchor="middle">INFLOW OK</text>
+  <circle cx="160" cy="228" r="7" fill="#22c55e"/>
+  <circle cx="180" cy="228" r="7" fill="rgba(167,139,250,0.6)"/>
+  <circle cx="200" cy="228" r="7" fill="#f59e0b"/>
+  <text x="160" y="241" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">FAN</text>
+  <text x="180" y="241" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">UV</text>
+  <text x="200" y="241" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">LIGHT</text>
+  <text x="150" y="278" font-family="Arial,sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle" font-weight="600">Biosafety Cabinet</text>
+</svg>

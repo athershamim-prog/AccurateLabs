@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Meter body -->
+  <rect x="108" y="30" width="84" height="130" rx="10" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Display -->
+  <rect x="115" y="40" width="70" height="52" rx="4" fill="#0f172a" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="150" y="57" font-family="Arial,sans-serif" font-size="7.5" fill="#38bdf8" text-anchor="middle">Dissolved O₂</text>
+  <text x="150" y="74" font-family="Arial,sans-serif" font-size="16" fill="#7dd3fc" text-anchor="middle" font-weight="700">8.2</text>
+  <text x="150" y="86" font-family="Arial,sans-serif" font-size="7.5" fill="#38bdf8" text-anchor="middle">mg/L</text>
+  <!-- Saturation % display -->
+  <text x="150" y="95" font-family="Arial,sans-serif" font-size="7" fill="#7dd3fc" text-anchor="middle">Sat: 94.3%</text>
+  <!-- Buttons -->
+  <rect x="115" y="98" width="20" height="11" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="140" y="98" width="20" height="11" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="165" y="98" width="20" height="11" rx="3" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="125" y="107" font-family="Arial,sans-serif" font-size="6.5" fill="#1d4ed8" text-anchor="middle">CAL</text>
+  <text x="150" y="107" font-family="Arial,sans-serif" font-size="6.5" fill="#1d4ed8" text-anchor="middle">MEM</text>
+  <text x="175" y="107" font-family="Arial,sans-serif" font-size="6.5" fill="#1d4ed8" text-anchor="middle">ON</text>
+  <!-- Mode bar -->
+  <rect x="115" y="115" width="70" height="10" rx="2" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="150" y="123" font-family="Arial,sans-serif" font-size="7" fill="#1d4ed8" text-anchor="middle">● mg/L  ○ %SAT  ○ ppm</text>
+  <!-- Probe cable -->
+  <line x1="150" y1="160" x2="150" y2="196" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- DO Probe body -->
+  <rect x="136" y="195" width="28" height="70" rx="8" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Probe membrane cap (bottom) -->
+  <ellipse cx="150" cy="268" rx="14" ry="5" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Electrolyte fill inside probe -->
+  <rect x="137" y="215" width="26" height="45" fill="rgba(147,197,253,0.25)"/>
+  <!-- Electrodes inside -->
+  <line x1="146" y1="218" x2="146" y2="258" stroke="#1d4ed8" stroke-width="1"/>
+  <line x1="154" y1="218" x2="154" y2="258" stroke="#1d4ed8" stroke-width="1"/>
+  <!-- Label -->
+  <text x="150" y="292" font-family="Arial,sans-serif" font-size="10" fill="#1d4ed8" text-anchor="middle" font-weight="600">Dissolved Oxygen Meter</text>
+</svg>

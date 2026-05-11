@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Amber/brown safety bottle -->
+  <!-- Neck -->
+  <rect x="133" y="52" width="34" height="38" rx="4" fill="rgba(180,120,40,0.35)" stroke="#92400e" stroke-width="2.5"/>
+  <!-- Shoulder -->
+  <path d="M133,88 Q114,104 114,118 M167,88 Q186,104 186,118" stroke="#92400e" stroke-width="2.5" fill="none"/>
+  <!-- Body -->
+  <rect x="114" y="116" width="72" height="138" rx="5" fill="rgba(180,120,40,0.3)" stroke="#92400e" stroke-width="2.5"/>
+  <!-- Amber liquid fill -->
+  <rect x="115" y="150" width="70" height="103" fill="rgba(180,83,9,0.2)"/>
+  <line x1="115" y1="150" x2="185" y2="150" stroke="rgba(180,83,9,0.5)" stroke-width="1.5"/>
+  <!-- Cap (orange/red) -->
+  <rect x="128" y="43" width="44" height="14" rx="5" fill="rgba(220,38,38,0.6)" stroke="#991b1b" stroke-width="2"/>
+  <!-- Hazard diamond -->
+  <rect x="125" y="160" width="50" height="50" rx="2" fill="rgba(255,255,255,0.7)" stroke="#92400e" stroke-width="1"/>
+  <rect x="150" y="163" width="22" height="22" rx="1" fill="rgba(220,38,38,0.3)" stroke="#dc2626" stroke-width="1.5" transform="rotate(45 150 174)"/>
+  <!-- Corrosive drops symbol -->
+  <path d="M144,174 Q144,180 148,180 Q152,180 152,174 L150,168 Z" fill="rgba(220,38,38,0.7)"/>
+  <path d="M153,174 Q153,180 157,180 Q161,180 161,174 L159,168 Z" fill="rgba(220,38,38,0.7)"/>
+  <text x="150" y="218" font-family="Arial,sans-serif" font-size="7.5" fill="#92400e" text-anchor="middle" font-weight="700">CORROSIVE</text>
+  <!-- Label text on bottle -->
+  <text x="150" y="240" font-family="Arial,sans-serif" font-size="9" fill="#92400e" text-anchor="middle" font-weight="700">H₂SO₄</text>
+  <text x="150" y="252" font-family="Arial,sans-serif" font-size="7.5" fill="#92400e" text-anchor="middle">Sulfuric Acid</text>
+  <!-- Product label -->
+  <text x="150" y="278" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Acids</text>
+</svg>

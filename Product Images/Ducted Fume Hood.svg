@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Exhaust duct on top -->
+  <rect x="115" y="22" width="70" height="38" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Duct arrow -->
+  <line x1="150" y1="22" x2="150" y2="14" stroke="#1d4ed8" stroke-width="2"/>
+  <path d="M145,14 L150,8 L155,14" fill="#1d4ed8"/>
+  <!-- Main cabinet body -->
+  <rect x="45" y="58" width="210" height="195" rx="5" fill="rgba(219,234,254,0.4)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Sash frame / front opening -->
+  <rect x="55" y="65" width="190" height="140" rx="4" fill="rgba(219,234,254,0.15)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Sash (partially open - shown as sliding glass panel) -->
+  <rect x="55" y="65" width="190" height="75" rx="4" fill="rgba(147,197,253,0.18)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Sash handle -->
+  <rect x="140" y="136" width="20" height="8" rx="3" fill="rgba(219,234,254,0.8)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Work surface inside -->
+  <rect x="58" y="198" width="184" height="6" rx="2" fill="rgba(219,234,254,0.7)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <!-- Side baffles -->
+  <line x1="75" y1="70" x2="75" y2="204" stroke="#1d4ed8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="225" y1="70" x2="225" y2="204" stroke="#1d4ed8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Air flow arrows inside -->
+  <line x1="100" y1="170" x2="100" y2="155" stroke="rgba(96,165,250,0.6)" stroke-width="2"/>
+  <path d="M95,155 L100,148 L105,155" fill="none" stroke="rgba(96,165,250,0.6)" stroke-width="1.5"/>
+  <line x1="150" y1="180" x2="150" y2="165" stroke="rgba(96,165,250,0.6)" stroke-width="2"/>
+  <path d="M145,165 L150,158 L155,165" fill="none" stroke="rgba(96,165,250,0.6)" stroke-width="1.5"/>
+  <line x1="200" y1="170" x2="200" y2="155" stroke="rgba(96,165,250,0.6)" stroke-width="2"/>
+  <path d="M195,155 L200,148 L205,155" fill="none" stroke="rgba(96,165,250,0.6)" stroke-width="1.5"/>
+  <!-- Control panel at bottom -->
+  <rect x="50" y="253" width="200" height="32" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <rect x="57" y="258" width="65" height="20" rx="3" fill="#0f172a" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="90" y="271" font-family="Arial,sans-serif" font-size="8" fill="#38bdf8" text-anchor="middle">0.5 m/s FACE</text>
+  <circle cx="152" cy="268" r="8" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <circle cx="173" cy="268" r="7" fill="rgba(219,234,254,0.6)" stroke="#1d4ed8" stroke-width="1.5"/>
+  <circle cx="200" cy="265" r="6" fill="#22c55e"/>
+  <circle cx="220" cy="265" r="6" fill="#f59e0b"/>
+  <text x="200" y="278" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">FAN</text>
+  <text x="220" y="278" font-family="Arial,sans-serif" font-size="6" fill="#1d4ed8" text-anchor="middle">LIGHT</text>
+  <!-- Label -->
+  <text x="150" y="300" font-family="Arial,sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle" font-weight="600">Ducted Fume Hood</text>
+</svg>

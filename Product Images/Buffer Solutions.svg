@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f7ff" rx="12"/>
+  <!-- Flat reagent bottle (HDPE style) -->
+  <!-- Neck -->
+  <rect x="136" y="52" width="28" height="34" rx="4" fill="rgba(219,234,254,0.5)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Body (squarish) -->
+  <rect x="100" y="84" width="100" height="156" rx="6" fill="rgba(219,234,254,0.45)" stroke="#1d4ed8" stroke-width="2.5"/>
+  <!-- Cap (blue) -->
+  <rect x="131" y="43" width="38" height="12" rx="5" fill="rgba(30,64,175,0.5)" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- Liquid fill (clear blue, ~60%) -->
+  <rect x="101" y="145" width="98" height="94" fill="rgba(147,197,253,0.3)"/>
+  <line x1="101" y1="145" x2="199" y2="145" stroke="rgba(96,165,250,0.6)" stroke-width="1.5"/>
+  <!-- Label -->
+  <rect x="105" y="100" width="90" height="90" rx="3" fill="white" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="150" y="118" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="700">BUFFER</text>
+  <text x="150" y="130" font-family="Arial,sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="700">SOLUTION</text>
+  <!-- pH scale bar -->
+  <rect x="112" y="138" width="76" height="8" rx="3" fill="url(#phGrad)"/>
+  <defs>
+    <linearGradient id="phGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- pH marker -->
+  <line x1="150" y1="135" x2="150" y2="150" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="112" y="135" font-family="Arial,sans-serif" font-size="7" fill="#6b7280">1</text>
+  <text x="185" y="135" font-family="Arial,sans-serif" font-size="7" fill="#6b7280">14</text>
+  <text x="150" y="120" font-family="Arial,sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="700" dy="30">pH 7.0</text>
+  <!-- Size -->
+  <text x="150" y="180" font-family="Arial,sans-serif" font-size="7.5" fill="#6b7280" text-anchor="middle">1000 mL</text>
+  <!-- Label -->
+  <text x="150" y="268" font-family="Arial,sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Buffer Solutions</text>
+</svg>
