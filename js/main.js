@@ -108,10 +108,30 @@ contactForm.addEventListener('submit', e => {
     return;
   }
 
-  // Replace this block with your actual form submission (e.g. fetch to a backend / EmailJS)
-  formMsg.textContent = 'Thank you! Your message has been sent. We will be in touch soon.';
-  formMsg.classList.add('success');
-  contactForm.reset();
+  const btn = contactForm.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  emailjs.send('service_ihfi0rg', 'template_i8vi932', {
+    from_name:  data.name,
+    from_email: data.email,
+    phone:      data.phone || 'Not provided',
+    subject:    data.subject,
+    message:    data.message,
+  })
+  .then(() => {
+    formMsg.textContent = 'Thank you! Your message has been sent. We will be in touch soon.';
+    formMsg.classList.add('success');
+    contactForm.reset();
+  })
+  .catch(() => {
+    formMsg.textContent = 'Something went wrong. Please try again or call us directly.';
+    formMsg.classList.add('error');
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  });
 });
 
 /* ── Back to Top ────────────────────────────────────────── */
