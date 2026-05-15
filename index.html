@@ -69,10 +69,20 @@
     .hp-prod-list li.active::before { color: var(--accent); }
 
     .hp-prod-image-panel {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 1.5rem; background: var(--light-bg); gap: 1rem; overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr;
+      padding: 1.25rem; background: var(--light-bg); gap: 1.25rem; overflow: auto; align-items: start;
     }
-    .hp-prod-img-wrap { width: 100%; max-width: 320px; aspect-ratio: 4/3; position: relative; }
+    .hp-img-col { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+    .hp-items-col { display: flex; flex-direction: column; }
+    .hp-items-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+    .hp-items-table thead th {
+      background: var(--blue-dark); color: #fff; padding: .5rem .75rem;
+      text-align: left; font-size: .78rem; text-transform: uppercase; letter-spacing: .03em;
+    }
+    .hp-items-table tbody td { padding: .45rem .75rem; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    .hp-items-table tbody tr:nth-child(even) td { background: rgba(0,0,0,.03); }
+    .hp-items-table tbody tr:last-child td { border-bottom: none; }
+    .hp-prod-img-wrap { width: 100%; max-width: 280px; aspect-ratio: 4/3; position: relative; }
     .hp-prod-img-wrap img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; display: block; background: white; }
     .hp-prod-img-placeholder {
       position: absolute; inset: 0; display: flex; flex-direction: column;
@@ -81,14 +91,14 @@
     }
     .hp-prod-img-placeholder i { font-size: 3rem; }
     .hp-prod-img-placeholder p { font-size: .85rem; }
-    .hp-prod-caption { font-size: 1rem; font-weight: 600; color: var(--blue-dark); text-align: center; }
-    .hp-enquire-btn { width: 100%; max-width: 320px; font-size: .9rem; padding: .65rem 1.5rem; }
+    .hp-prod-caption { font-size: .95rem; font-weight: 600; color: var(--blue-dark); text-align: center; }
+    .hp-enquire-btn { width: 100%; max-width: 280px; font-size: .9rem; padding: .6rem 1.25rem; }
     .hp-view-all-wrap { text-align: center; margin-top: 1.75rem; }
 
     @media (max-width: 900px) {
       .hp-prod-layout { grid-template-columns: 1fr; height: auto; overflow: visible; }
       .hp-cat-sidebar { max-height: 240px; }
-      .hp-product-panel { height: 480px; }
+      .hp-product-panel { height: auto; }
       .hp-panel-body { grid-template-columns: 1fr; overflow: visible; }
       .hp-prod-list { max-height: 160px; border-right: none; border-bottom: 1px solid var(--border); }
       .hp-prod-image-panel { overflow: auto; }
@@ -464,25 +474,202 @@
 
   <script src="js/main.js"></script>
   <script>
-    document.querySelectorAll('a.product__cat').forEach(link => {
-      link.addEventListener('click', () => {
-        const cat = new URL(link.href).searchParams.get('cat');
-        if (cat) localStorage.setItem('initCat', cat);
-      });
-    });
-  </script>
-  <script>
     /* ── Home Page Product Browser ── */
     {
       const hpProductData = {
-        'Lab Glassware':         ['Beakers', 'Erlenmeyer Flasks', 'Burettes', 'Pipettes', 'Test Tubes', 'Petri Dishes', 'Measuring Cylinders'],
-        'Analytical Instruments':['Spectrophotometer', 'pH Meter', 'Centrifuge', 'PCR Machine', 'Water Bath', 'Hot Plate Stirrer'],
+        'Lab Glassware':         ['Beakers', 'Erlenmeyer Flasks', 'Burettes', 'Micro Pipettes (Calibrated)', 'Test Tubes', 'Petri Dishes', 'Measuring Cylinders', 'Volumetric Flasks', 'Conical Flasks', 'Clear Glass Vials (Screw Cap)', 'Amber Glass Vials (Screw Cap)', 'HPLC/GC Glass Vials (Clear)', 'HPLC/GC Glass Vials (Amber)', 'Glass Syringes GC', 'Glass Syringes HPLC', 'Vacuum Desiccator', 'Spatula', 'Glass Rods', 'Weighing Boats'],
+        'Analytical Instruments':['Spectrophotometer', 'pH Meter', 'Centrifuge', 'PCR Machine', 'Water Bath', 'Hot Plate Stirrer', 'Vortex Mixer', 'Ultrasonicator (Sonicator)', 'Analytical Weighing Balance', 'Homogenizer / Blender', 'Grinder', 'Laboratory Freezer (−20°C)', 'Refrigerator (4°C)', 'Refrigerator (−80°C)', 'Thermomixer', 'Orbital / Reciprocating Shaker', 'Water Purification System (miliQ)', 'Vacuum Concentrator', 'Microwave Oven', 'Furnace'],
         'Chemicals':             ['Solvents', 'Acids', 'Buffer Solutions', 'Indicators', 'Stains & Dyes', 'Culture Media'],
-        'Plasticware':           ['Plastic Beakers', 'Sample Bottles', 'Centrifuge Tubes', 'Microtubes', 'Pipette Tips', 'Wash Bottles'],
+        'Plasticware':           ['Plastic Beakers', 'Sample Bottles', 'Centrifuge Tubes', 'Microtubes', 'Pipette Tips', 'Wash Bottles', 'Pipette Tip Boxes', 'Pipette Rack', 'Centrifuge Tube Holders', 'Kim Wipes', 'Reagent Bottles with Dropper', 'Reagent Bottles with Screw Cap', 'HPLC/GC Vial Holder Box', 'Gloves (Powder Free)', 'Septa for Screw Cap Vials', 'Inserts (5mm dia, 175µL)', 'Lab Coats', 'Safety Goggles', 'Eye Wash Bottles', 'Chemical Masks / Respirators'],
         'Testing Equipment':     ['Autoclave', 'Incubator', 'Microscope', 'Conductivity Meter', 'Turbidity Meter', 'Dissolved Oxygen Meter'],
-        'Filtration':            ['Filter Papers', 'Vacuum Filter Flasks', 'Membrane Filters', 'Buchner Funnels', 'Syringe Filters'],
+        'Filtration':            ['Filter Papers', 'Vacuum Filter Flasks', 'Membrane Filters', 'Buchner Funnels', 'Syringe Filters', 'Filter Syringes (Disposable 25mL)'],
         'Weighing Scales':       ['Analytical Balance', 'Precision Balance', 'Top Loading Balance', 'Moisture Analyser'],
         'Fume Hoods':            ['Ducted Fume Hood', 'Ductless Fume Hood', 'Biosafety Cabinet', 'Laminar Flow Cabinet'],
+      };
+
+      const hpItemData = {
+        // ── Chemicals → Solvents subcategory ─────────────────
+        'Solvents': [
+          { item: 'Formic Acid',            qty: '2.5 Litres' },
+          { item: 'TFA',                    qty: '2 Litres'   },
+          { item: 'Methanol',               qty: '10 Litres'  },
+          { item: 'Chloroform',             qty: '10 Litres'  },
+          { item: 'Acetonitrile',           qty: '12 Litres'  },
+          { item: 'IPA (Isopropanol)',      qty: '5 Litres'   },
+          { item: 'Ethanol',                qty: '10 Litres'  },
+          { item: 'Ethyl Acetate',          qty: '2.5 Litres' },
+          { item: 'n-Hexane',               qty: '10 Litres'  },
+          { item: 'Dichloromethane',        qty: '5 Litres'   },
+          { item: 'Acetone',                qty: '5 Litres'   },
+          { item: 'Toluene',                qty: '2.5 Litres' },
+          { item: 'Isooctane / Cyclohexane',qty: '2.5 Litres' },
+        ],
+
+        // ── Glassware sheet ───────────────────────────────────
+        'Measuring Cylinders': [
+          { item: '5 mL',   qty: 10 },
+          { item: '10 mL',  qty: 20 },
+          { item: '25 mL',  qty: 20 },
+          { item: '50 mL',  qty: 20 },
+          { item: '100 mL', qty: 10 },
+        ],
+        'Beakers': [
+          { item: '50 mL',  qty: 10 },
+          { item: '100 mL', qty: 10 },
+          { item: '500 mL', qty: 10 },
+        ],
+        'Volumetric Flasks': [
+          { item: '5 mL',   qty: 100 },
+          { item: '10 mL',  qty: 100 },
+          { item: '25 mL',  qty: 100 },
+          { item: '50 mL',  qty: 100 },
+          { item: '100 mL', qty: 20  },
+        ],
+        'Conical Flasks': [
+          { item: '50 mL',  qty: 20 },
+          { item: '100 mL', qty: 20 },
+          { item: '500 mL', qty: 20 },
+        ],
+        'Clear Glass Vials (Screw Cap)': [
+          { item: '4 mL',  qty: 500 },
+          { item: '12 mL', qty: 500 },
+          { item: '20 mL', qty: 500 },
+          { item: '40 mL', qty: 500 },
+        ],
+        'Amber Glass Vials (Screw Cap)': [
+          { item: '4 mL',  qty: 200 },
+          { item: '12 mL', qty: 200 },
+          { item: '20 mL', qty: 200 },
+          { item: '40 mL', qty: 200 },
+        ],
+        'Vacuum Desiccator': [{ item: 'High-quality', qty: 1 }],
+        'Spatula':           [{ item: 'All sizes', qty: '2 sets' }],
+        'Glass Rods':        [{ item: 'Standard',  qty: 10 }],
+        'Weighing Boats':    [{ item: 'Standard',  qty: 500 }],
+
+        // ── Glass items from Consumables sheet ────────────────
+        'HPLC/GC Glass Vials (Clear)': [{ item: 'Screw Cap, Clear Glass', qty: 3000 }],
+        'HPLC/GC Glass Vials (Amber)': [{ item: 'Screw Cap, Amber Glass', qty: 1000 }],
+        'Glass Syringes GC': [
+          { item: '5 µL — Sharp End',  qty: 2 },
+          { item: '10 µL — Sharp End', qty: 2 },
+        ],
+        'Glass Syringes HPLC': [
+          { item: '5 µL — Blunt End',   qty: 2 },
+          { item: '10 µL — Blunt End',  qty: 4 },
+          { item: '0.1 mL — Blunt End', qty: 4 },
+          { item: '0.5 mL — Blunt End', qty: 4 },
+          { item: '1 mL — Blunt End',   qty: 3 },
+          { item: '5 mL — Blunt End',   qty: 3 },
+        ],
+
+        // ── Analytical Instruments (Equipments sheet) ─────────
+        'Centrifuge':                      [{ item: '>15,000 RPM, Rotors 0.2–250 mL, Refrigerated', qty: 2 }],
+        'pH Meter':                        [{ item: 'With Conductometer, electrode holder, buffer & conductivity standards', qty: 1 }],
+        'Hot Plate Stirrer':               [{ item: '500–2,200 RPM, ambient to 320°C', qty: 2 }],
+        'Vortex Mixer':                    [{ item: 'Digital, >3,000 RPM, Multi-tube 1.5–50 mL', qty: 2 }],
+        'Ultrasonicator (Sonicator)':      [{ item: '5 L, 99-min timer, 5–80°C', qty: 2 }],
+        'Analytical Weighing Balance':     [{ item: '1 µg Micro / 0.0001 mg Precision, with Printer', qty: 2 }],
+        'Homogenizer / Blender':           [{ item: '5,000–30,000 RPM, 0.20–100 mL, 220 V', qty: 2 }],
+        'Grinder':                         [{ item: '25,000 RPM, 500–2,000 g capacity, 2–4 kW', qty: 2 }],
+        'Laboratory Freezer (−20°C)':      [{ item: '365 L, Inverter compressor, data logging', qty: 1 }],
+        'Refrigerator (4°C)':              [{ item: '62×60×163 cm, Inverter, touch display', qty: 1 }],
+        'Refrigerator (−80°C)':            [{ item: '−50 to −86°C, 588 L, audible/visual alarms', qty: 1 }],
+        'Thermomixer':                     [{ item: '0–100°C, blocks 0.2–50 mL, orbital shaking', qty: 1 }],
+        'Orbital / Reciprocating Shaker':  [{ item: '350 RPM, fits 250–2,000 mL flasks', qty: 1 }],
+        'Water Purification System (miliQ)':[{ item: 'Type 1 & 3, 3 L/h, 18.2 mΩ·cm', qty: 1 }],
+        'Vacuum Concentrator':             [{ item: '1.5/2 mL, 15/50 mL, 96-well plate rotors', qty: 1 }],
+        'Microwave Oven':                  [{ item: '50 L, convection, max 300°C, 2–4 shelves', qty: 2 }],
+        'Furnace':                         [{ item: 'Max 1,800°C, up to 1,000 L, overheat alarm', qty: 1 }],
+
+        // ── Weighing Scales (Equipments sheet) ───────────────
+        'Analytical Balance': [
+          { item: '1 µg Micro / 0.0001 mg Precision, with Printer', qty: 2 },
+        ],
+
+        // ── Plasticware (Consumables sheet) ──────────────────
+        'Micro Pipettes (Calibrated)': [
+          { item: '1–2.5 µL',     qty: 3 },
+          { item: '2–20 µL',      qty: 3 },
+          { item: '20–200 µL',    qty: 3 },
+          { item: '100–1,000 µL', qty: 3 },
+          { item: '5 mL',         qty: 3 },
+        ],
+        'Pipette Tip Boxes': [
+          { item: '1–2.5 µL',     qty: 5 },
+          { item: '2–20 µL',      qty: 5 },
+          { item: '20–200 µL',    qty: 5 },
+          { item: '100–1,000 µL', qty: 5 },
+          { item: '5 mL',         qty: 5 },
+        ],
+        'Pipette Rack':            [{ item: 'Holds 6 pipettes',          qty: 4    }],
+        'Centrifuge Tube Holders': [
+          { item: '200 µL',   qty: 10 },
+          { item: '500 µL',   qty: 10 },
+          { item: '1,500 µL', qty: 10 },
+          { item: '2,000 µL', qty: 10 },
+          { item: '15 mL',    qty: 10 },
+          { item: '50 mL',    qty: 10 },
+        ],
+        'Kim Wipes':               [{ item: 'Standard lint-free wipers', qty: '20 boxes' }],
+        'Reagent Bottles with Dropper': [
+          { item: '100 mL', qty: 25 },
+          { item: '250 mL', qty: 25 },
+        ],
+        'Reagent Bottles with Screw Cap': [
+          { item: '100 mL',   qty: 25 },
+          { item: '250 mL',   qty: 25 },
+          { item: '1,000 mL', qty: 12 },
+        ],
+        'HPLC/GC Vial Holder Box': [{ item: 'Standard holder box',       qty: 20   }],
+        'Gloves (Powder Free)': [
+          { item: 'Small',  qty: 5  },
+          { item: 'Medium', qty: 10 },
+          { item: 'Large',  qty: 10 },
+        ],
+        'Septa for Screw Cap Vials': [{ item: 'Standard septa',          qty: 5000 }],
+        'Inserts (5mm dia, 175µL)':  [{ item: '5mm dia, 175 µL',         qty: 5000 }],
+        'Lab Coats': [
+          { item: 'Small',  qty: 10 },
+          { item: 'Medium', qty: 10 },
+          { item: 'Large',  qty: 10 },
+        ],
+        'Safety Goggles':            [{ item: 'Standard safety goggles',  qty: 6    }],
+        'Eye Wash Bottles':          [{ item: 'Standard eye wash bottle', qty: 2    }],
+        'Chemical Masks / Respirators': [
+          { item: 'NP305 Single Cartridge (Reusable)',  qty: 6   },
+          { item: 'Disposable — Fumes / Dust / Smoke',  qty: 100 },
+        ],
+        'Centrifuge Tubes': [
+          { item: '200 µL',   qty: 5000 },
+          { item: '500 µL',   qty: 5000 },
+          { item: '1,500 µL', qty: 5000 },
+          { item: '2,000 µL', qty: 5000 },
+          { item: '15 mL',    qty: 5000 },
+          { item: '50 mL',    qty: 5000 },
+        ],
+        'Pipette Tips': [
+          { item: '1–2.5 µL',     qty: 5000 },
+          { item: '2–20 µL',      qty: 5000 },
+          { item: '20–200 µL',    qty: 5000 },
+          { item: '100–1,000 µL', qty: 5000 },
+          { item: '5 mL',         qty: 5000 },
+        ],
+        'Wash Bottles': [
+          { item: '100 mL', qty: 10 },
+          { item: '250 mL', qty: 10 },
+        ],
+
+        // ── Filtration (Consumables sheet) ───────────────────
+        'Filter Syringes (Disposable 25mL)': [{ item: 'Disposable, 25 mL', qty: 5000 }],
+        'Syringe Filters': [
+          { item: '0.22 µm — PES',  qty: 1000 },
+          { item: '0.22 µm — PVDF', qty: 1000 },
+          { item: '0.22 µm — PTFE', qty: 2000 },
+          { item: '0.45 µm — PES',  qty: 500  },
+          { item: '0.45 µm — PVDF', qty: 500  },
+          { item: '0.45 µm — PTFE', qty: 500  },
+        ],
       };
 
       const IMG_EXTS = ['jpg', 'png', 'webp', 'jpeg', 'svg'];
@@ -507,16 +694,24 @@
         const imagePanel = document.createElement('div');
         imagePanel.className = 'hp-prod-image-panel';
         imagePanel.innerHTML = `
-          <div class="hp-prod-img-wrap">
-            <img id="hpProdImg" src="" alt="">
-            <div class="hp-prod-img-placeholder" id="hpProdPh">
-              <i class="fas fa-image"></i><p>Image coming soon</p>
+          <div class="hp-img-col">
+            <div class="hp-prod-img-wrap">
+              <img id="hpProdImg" src="" alt="">
+              <div class="hp-prod-img-placeholder" id="hpProdPh">
+                <i class="fas fa-image"></i><p>Image coming soon</p>
+              </div>
             </div>
+            <p class="hp-prod-caption" id="hpProdCaption"></p>
+            <button class="btn btn--primary hp-enquire-btn" id="hpEnquireBtn" type="button">
+              <i class="fas fa-envelope"></i> Enquire Now
+            </button>
           </div>
-          <p class="hp-prod-caption" id="hpProdCaption"></p>
-          <button class="btn btn--primary hp-enquire-btn" id="hpEnquireBtn" type="button">
-            <i class="fas fa-envelope"></i> Enquire Now
-          </button>`;
+          <div class="hp-items-col">
+            <table class="hp-items-table">
+              <thead><tr><th>Item &amp; Specification</th></tr></thead>
+              <tbody id="hpItemsBody"></tbody>
+            </table>
+          </div>`;
 
         hpPanelBody.innerHTML = '';
         hpPanelBody.appendChild(list);
@@ -526,6 +721,7 @@
         const ph         = hpPanelBody.querySelector('#hpProdPh');
         const caption    = hpPanelBody.querySelector('#hpProdCaption');
         const enquireBtn = hpPanelBody.querySelector('#hpEnquireBtn');
+        const itemsBody  = hpPanelBody.querySelector('#hpItemsBody');
 
         enquireBtn.addEventListener('click', () => {
           document.getElementById('hpModalProductName').textContent = caption.textContent;
@@ -541,9 +737,17 @@
           ph.style.display = 'none';
           img.alt = name;
           hpTryLoad(img, ph, name, 0);
+          const rows = hpItemData[name] || [];
+          itemsBody.innerHTML = rows.length
+            ? rows.map(r => `<tr><td>${r.item}</td></tr>`).join('')
+            : '<tr><td colspan="2" style="color:var(--muted);text-align:center;padding:1rem;font-size:.82rem">Contact Us for Specifications</td></tr>';
         }
 
-        products.forEach((name, i) => {
+        const sorted = [...products].sort((a, b) =>
+          ((hpItemData[b] || []).length > 0 ? 1 : 0) - ((hpItemData[a] || []).length > 0 ? 1 : 0)
+        );
+
+        sorted.forEach((name, i) => {
           const li = document.createElement('li');
           li.textContent = name;
           li.addEventListener('click', () => hpSelect(li, name));
