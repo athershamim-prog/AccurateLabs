@@ -96,18 +96,35 @@ startAuto();
 const contactForm = document.getElementById('contactForm');
 const formMsg     = document.getElementById('formMsg');
 
+const requiredFields = contactForm.querySelectorAll('[required]');
+requiredFields.forEach(field => {
+  field.addEventListener('input', () => field.classList.remove('field--error'));
+});
+
 contactForm.addEventListener('submit', e => {
   e.preventDefault();
   formMsg.textContent = '';
   formMsg.className   = 'form__msg';
 
-  const nameVal    = contactForm.querySelector('[name="name"]').value.trim();
-  const emailVal   = contactForm.querySelector('[name="email"]').value.trim();
-  const phoneVal   = contactForm.querySelector('[name="phone"]').value.trim();
-  const subjectVal = contactForm.querySelector('[name="subject"]').value.trim();
-  const messageVal = contactForm.querySelector('[name="message"]').value.trim();
+  const nameEl    = contactForm.querySelector('[name="name"]');
+  const emailEl   = contactForm.querySelector('[name="email"]');
+  const phoneEl   = contactForm.querySelector('[name="phone"]');
+  const subjectEl = contactForm.querySelector('[name="subject"]');
+  const messageEl = contactForm.querySelector('[name="message"]');
 
-  if (!nameVal || !emailVal || !subjectVal || !messageVal) {
+  const nameVal    = nameEl.value.trim();
+  const emailVal   = emailEl.value.trim();
+  const phoneVal   = phoneEl.value.trim();
+  const subjectVal = subjectEl.value.trim();
+  const messageVal = messageEl.value.trim();
+
+  let hasError = false;
+  [nameEl, emailEl, phoneEl, subjectEl, messageEl].forEach(el => {
+    if (!el.value.trim()) { el.classList.add('field--error'); hasError = true; }
+    else el.classList.remove('field--error');
+  });
+
+  if (hasError) {
     formMsg.textContent = 'Please fill in all required fields.';
     formMsg.classList.add('error');
     return;

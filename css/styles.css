@@ -316,6 +316,12 @@ img { max-width: 100%; display: block; }
 .form__msg { font-size: .88rem; text-align: center; min-height: 1.2rem; }
 .form__msg.success { color: #28a745; }
 .form__msg.error   { color: #dc3545; }
+.contact__form input.field--error,
+.contact__form textarea.field--error {
+  border-color: #dc3545;
+  background: #fff5f5;
+  box-shadow: 0 0 0 3px rgba(220,53,69,.12);
+}
 
 /* ── Footer ────────────────────────────────────────────── */
 .footer { background: var(--blue-dark); color: rgba(255,255,255,.75); padding: 3.5rem 0 0; }
