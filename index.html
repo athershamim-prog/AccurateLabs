@@ -408,8 +408,8 @@
       <form id="hpEnquireForm">
         <input type="text"  name="name"    placeholder="Full Name *"     required />
         <input type="email" name="email"   placeholder="Email Address *" required />
-        <input type="text"  name="phone"   placeholder="Phone Number" />
-        <textarea name="message" rows="4"  placeholder="Your message or specific requirements..."></textarea>
+        <input type="text"  name="phone"   placeholder="Phone Number *"  required />
+        <textarea name="message" rows="4"  placeholder="Your message or specific requirements... *" required></textarea>
         <button type="submit" class="btn btn--primary btn--full">Send Enquiry</button>
         <div class="modal__msg" id="hpModalMsg"></div>
       </form>
@@ -786,15 +786,30 @@
       hpModal.addEventListener('click', e => { if (e.target === hpModal) hpCloseModal(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape') hpCloseModal(); });
 
+      hpForm.querySelectorAll('[required]').forEach(field => {
+        field.addEventListener('input', () => field.classList.remove('field--error'));
+      });
+
       hpForm.addEventListener('submit', e => {
         e.preventDefault();
-        const nameVal    = hpForm.querySelector('[name="name"]').value.trim();
-        const emailVal   = hpForm.querySelector('[name="email"]').value.trim();
-        const phoneVal   = hpForm.querySelector('[name="phone"]').value.trim();
-        const messageVal = hpForm.querySelector('textarea').value.trim();
+        const nameEl    = hpForm.querySelector('[name="name"]');
+        const emailEl   = hpForm.querySelector('[name="email"]');
+        const phoneEl   = hpForm.querySelector('[name="phone"]');
+        const messageEl = hpForm.querySelector('textarea');
 
-        if (!nameVal || !emailVal) {
-          hpModalMsg.textContent = 'Please provide your name and email.';
+        const nameVal    = nameEl.value.trim();
+        const emailVal   = emailEl.value.trim();
+        const phoneVal   = phoneEl.value.trim();
+        const messageVal = messageEl.value.trim();
+
+        let hasError = false;
+        [nameEl, emailEl, phoneEl, messageEl].forEach(el => {
+          if (!el.value.trim()) { el.classList.add('field--error'); hasError = true; }
+          else el.classList.remove('field--error');
+        });
+
+        if (hasError) {
+          hpModalMsg.textContent = 'Please fill in all required fields.';
           hpModalMsg.className = 'modal__msg error';
           return;
         }

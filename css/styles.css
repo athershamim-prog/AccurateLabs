@@ -317,7 +317,9 @@ img { max-width: 100%; display: block; }
 .form__msg.success { color: #28a745; }
 .form__msg.error   { color: #dc3545; }
 .contact__form input.field--error,
-.contact__form textarea.field--error {
+.contact__form textarea.field--error,
+.modal form input.field--error,
+.modal form textarea.field--error {
   border-color: #dc3545;
   background: #fff5f5;
   box-shadow: 0 0 0 3px rgba(220,53,69,.12);
