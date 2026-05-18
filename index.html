@@ -160,8 +160,8 @@
       <ul class="nav__links" id="navLinks">
         <li><a href="#home"     class="nav-link active">Home</a></li>
         <li><a href="#about"    class="nav-link">About Us</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#clients"  class="nav-link">Industries</a></li>
         <li><a href="#contact"  class="nav-link nav-link--cta">Contact Us</a></li>
       </ul>
@@ -186,7 +186,7 @@
             <div class="slide__content">
               <h1>A Trusted Scientific<br>Partner</h1>
               <p>Decades of experience delivering accuracy and reliability to leading institutions</p>
-              <a href="#about" class="btn btn--primary">Learn More</a>
+              <a href="#products" class="btn btn--primary">Products</a>
             </div>
           </div>
         </div>
@@ -259,6 +259,45 @@
     </div>
   </section>
 
+  <!-- ── Product Browser (preview) ── -->
+  <section class="section section--alt" id="products">
+    <div class="container">
+      <span class="section__tag section__tag--center">Product Range</span>
+      <h2 class="section__title">Product Categories</h2>
+      <p class="section__subtitle">Select a category to browse our full product range</p>
+      <div class="hp-prod-layout">
+
+        <!-- Category Sidebar -->
+        <aside class="hp-cat-sidebar">
+          <h3><i class="fas fa-th-list"></i> Categories</h3>
+          <ul id="hpCatList">
+            <li><button type="button" data-cat="Lab Glassware"          data-icon="fa-flask"><i class="fas fa-flask"></i> Lab Glassware</button></li>
+            <li><button type="button" data-cat="Analytical Instruments"  data-icon="fa-thermometer-half"><i class="fas fa-thermometer-half"></i> Analytical Instruments</button></li>
+            <li><button type="button" data-cat="Chemicals"              data-icon="fa-pills"><i class="fas fa-pills"></i> Chemicals</button></li>
+            <li><button type="button" data-cat="Plasticware"            data-icon="fa-box"><i class="fas fa-box"></i> Plasticware</button></li>
+            <li><button type="button" data-cat="Testing Equipment"      data-icon="fa-laptop-medical"><i class="fas fa-laptop-medical"></i> Testing Equipment</button></li>
+            <li><button type="button" data-cat="Filtration"             data-icon="fa-filter"><i class="fas fa-filter"></i> Filtration</button></li>
+            <li><button type="button" data-cat="Weighing Scales"        data-icon="fa-weight"><i class="fas fa-weight"></i> Weighing Scales</button></li>
+            <li><button type="button" data-cat="Fume Hoods"             data-icon="fa-wind"><i class="fas fa-wind"></i> Fume Hoods</button></li>
+          </ul>
+        </aside>
+
+        <!-- Product Panel -->
+        <div class="hp-product-panel">
+          <div class="hp-product-panel__header">
+            <i class="fas fa-flask" id="hpPanelIcon"></i>
+            <span id="hpPanelTitle">Lab Glassware</span>
+          </div>
+          <div class="hp-panel-body" id="hpPanelBody"></div>
+        </div>
+
+      </div>
+      <div class="hp-view-all-wrap">
+        <a href="#contact" class="btn btn--primary">Contact Us &nbsp;<i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Services ── -->
   <section class="section section--alt" id="services">
     <div class="container">
@@ -296,45 +335,6 @@
           <h3>Calibration & Support</h3>
           <p>On-site calibration, maintenance, and technical support for all supplied instruments.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Product Browser (preview) ── -->
-  <section class="section section--alt" id="products">
-    <div class="container">
-      <span class="section__tag section__tag--center">Product Range</span>
-      <h2 class="section__title">Product Categories</h2>
-      <p class="section__subtitle">Select a category to browse our full product range</p>
-      <div class="hp-prod-layout">
-
-        <!-- Category Sidebar -->
-        <aside class="hp-cat-sidebar">
-          <h3><i class="fas fa-th-list"></i> Categories</h3>
-          <ul id="hpCatList">
-            <li><button type="button" data-cat="Lab Glassware"          data-icon="fa-flask"><i class="fas fa-flask"></i> Lab Glassware</button></li>
-            <li><button type="button" data-cat="Analytical Instruments"  data-icon="fa-thermometer-half"><i class="fas fa-thermometer-half"></i> Analytical Instruments</button></li>
-            <li><button type="button" data-cat="Chemicals"              data-icon="fa-pills"><i class="fas fa-pills"></i> Chemicals</button></li>
-            <li><button type="button" data-cat="Plasticware"            data-icon="fa-box"><i class="fas fa-box"></i> Plasticware</button></li>
-            <li><button type="button" data-cat="Testing Equipment"      data-icon="fa-laptop-medical"><i class="fas fa-laptop-medical"></i> Testing Equipment</button></li>
-            <li><button type="button" data-cat="Filtration"             data-icon="fa-filter"><i class="fas fa-filter"></i> Filtration</button></li>
-            <li><button type="button" data-cat="Weighing Scales"        data-icon="fa-weight"><i class="fas fa-weight"></i> Weighing Scales</button></li>
-            <li><button type="button" data-cat="Fume Hoods"             data-icon="fa-wind"><i class="fas fa-wind"></i> Fume Hoods</button></li>
-          </ul>
-        </aside>
-
-        <!-- Product Panel -->
-        <div class="hp-product-panel">
-          <div class="hp-product-panel__header">
-            <i class="fas fa-flask" id="hpPanelIcon"></i>
-            <span id="hpPanelTitle">Lab Glassware</span>
-          </div>
-          <div class="hp-panel-body" id="hpPanelBody"></div>
-        </div>
-
-      </div>
-      <div class="hp-view-all-wrap">
-        <a href="#contact" class="btn btn--primary">Contact Us &nbsp;<i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </section>
@@ -435,8 +435,8 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
           <li><a href="#products">Products</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
